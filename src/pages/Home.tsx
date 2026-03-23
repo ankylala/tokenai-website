@@ -1,5 +1,6 @@
 import { Navbar, Footer } from '../components/layout';
 import { Hero } from '../components/sections/Hero';
+import { CoreCapabilities } from '../components/sections/CoreCapabilities';
 import { Products } from '../components/sections/Products';
 import Solutions from '../components/sections/Solutions';
 import Timeline from '../components/sections/Timeline';
@@ -11,6 +12,7 @@ export function Home() {
       <Navbar />
       <main>
         <Hero />
+        <CoreCapabilities />
         <Products />
         <Solutions />
         <Timeline />
