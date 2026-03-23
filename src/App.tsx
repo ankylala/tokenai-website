@@ -8,6 +8,7 @@ const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })))
 const About = lazy(() => import('./pages/About'));
 const Products = lazy(() => import('./pages/Products'));
 const Solutions = lazy(() => import('./pages/Solutions'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 // 加载中组件
 function LoadingSpinner() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>
       <CustomerServiceButton />
