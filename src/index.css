@@ -54,3 +54,24 @@ body {
     box-shadow: 0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(168, 85, 247, 0.2);
   }
 }
+
+/* 宽屏优化：2K（1536px+）和 4K（2560px+）自适应 */
+@media (min-width: 1536px) {
+  /* 标题字号在大屏下适当放大 */
+  h1.responsive-heading { font-size: clamp(3rem, 5vw, 6rem); }
+  h2.responsive-heading { font-size: clamp(2rem, 3.5vw, 4.5rem); }
+
+  /* section 纵向 padding 放大 */
+  .section-spacing { padding-top: 7rem; padding-bottom: 7rem; }
+}
+
+@media (min-width: 1920px) {
+  .section-spacing { padding-top: 9rem; padding-bottom: 9rem; }
+}
+
+@media (min-width: 2560px) {
+  /* 4K 下字号进一步放大 */
+  body { font-size: 18px; }
+  .section-spacing { padding-top: 11rem; padding-bottom: 11rem; }
+}
+

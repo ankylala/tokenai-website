@@ -41,7 +41,7 @@ export function Products() {
 
   return (
     <section className="py-20 bg-background-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h2
