@@ -11,10 +11,8 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-dark to-primary rounded-lg flex items-center justify-center shadow-glow">
-                <span className="text-white font-bold text-xl">T</span>
-              </div>
-              <span className="text-2xl font-bold text-gradient">{COMPANY_INFO.name}</span>
+              <img src="/logo_white.png" alt="Logo" className="h-10 w-auto" />
+              <span className="text-2xl font-bold text-white">{COMPANY_INFO.name}</span>
             </div>
             <p className="text-text-muted text-sm">{COMPANY_INFO.slogan}</p>
             <p className="text-text-muted text-sm">{COMPANY_INFO.fullName}</p>
@@ -101,15 +99,6 @@ export function Footer() {
               © {currentYear} {COMPANY_INFO.fullName}. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="/privacy" className="text-text-muted hover:text-primary transition-colors text-sm">
-                隐私政策
-              </a>
-              <a href="/terms" className="text-text-muted hover:text-primary transition-colors text-sm">
-                服务条款
-              </a>
-              <a href="/sitemap" className="text-text-muted hover:text-primary transition-colors text-sm">
-                网站地图
-              </a>
             </div>
           </div>
         </div>

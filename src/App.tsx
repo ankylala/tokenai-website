@@ -9,6 +9,8 @@ const About = lazy(() => import('./pages/About'));
 const Products = lazy(() => import('./pages/Products'));
 const Solutions = lazy(() => import('./pages/Solutions'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
 
 // 加载中组件
 function LoadingSpinner() {
@@ -32,6 +34,8 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </Suspense>
       <CustomerServiceButton />

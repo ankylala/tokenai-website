@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   MapPin,
@@ -63,6 +63,15 @@ const contactInfo = [
 ];
 
 export default function Contact() {
+  useEffect(() => {
+    if (window.location.hash === '#apply') {
+      const formSection = document.getElementById('apply');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     company: '',
@@ -198,7 +207,7 @@ export default function Contact() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-24 bg-slate-900/50">
+        <section id="apply" className="py-24 bg-slate-900/50">
           <div className="max-w-7xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
             <div className="grid lg:grid-cols-5 gap-12">
               {/* Left Side - Info */}
@@ -257,18 +266,18 @@ export default function Contact() {
                     </p>
                     <div className="space-y-3">
                       <a
-                        href="tel:400-XXX-XXXX"
+                        href="tel:13795366587"
                         className="flex items-center gap-3 text-purple-400 hover:text-purple-300 transition-colors"
                       >
                         <Phone className="w-5 h-5" />
-                        <span>400-XXX-XXXX</span>
+                        <span>13795366587（联系人：林亮）</span>
                       </a>
                       <a
-                        href="mailto:business@tokenai.com"
+                        href="mailto:linliang@token-ai.com.cn"
                         className="flex items-center gap-3 text-purple-400 hover:text-purple-300 transition-colors"
                       >
                         <Mail className="w-5 h-5" />
-                        <span>business@tokenai.com</span>
+                        <span>linliang@token-ai.com.cn</span>
                       </a>
                     </div>
                   </div>
@@ -451,11 +460,11 @@ export default function Contact() {
 
                       <p className="text-center text-gray-400 text-sm">
                         提交即表示您同意我们的
-                        <a href="#" className="text-purple-400 hover:text-purple-300 mx-1">
+                        <a href="/privacy" className="text-purple-400 hover:text-purple-300 mx-1">
                           隐私政策
                         </a>
                         和
-                        <a href="#" className="text-purple-400 hover:text-purple-300 mx-1">
+                        <a href="/terms" className="text-purple-400 hover:text-purple-300 mx-1">
                           服务条款
                         </a>
                       </p>

@@ -38,8 +38,7 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
-              <span className="text-2xl font-bold text-gradient">{COMPANY_INFO.name}</span>
+              <img src="/logo_white.png" alt="Logo" className="h-10 w-auto" />
             </Link>
           </div>
 
@@ -59,7 +58,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button variant="primary" size="sm">
+            <Button variant="primary" size="sm" onClick={() => window.location.href = '/contact#apply'}>
               产品演示
             </Button>
           </div>
@@ -96,7 +95,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="pt-3">
-              <Button variant="primary" size="sm" className="w-full">
+              <Button variant="primary" size="sm" className="w-full" onClick={() => window.location.href = '/contact#apply'}>
                 产品演示
               </Button>
             </div>
