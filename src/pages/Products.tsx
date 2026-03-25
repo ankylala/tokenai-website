@@ -117,7 +117,7 @@ export default function Products() {
                 {/* Header */}
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
                   <div className="inline-flex items-center gap-3 mb-3">
-                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${product.gradient} flex items-center justify-center`}>
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <span className="text-purple-400 text-sm">{product.subtitle}</span>
