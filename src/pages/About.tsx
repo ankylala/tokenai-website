@@ -33,27 +33,27 @@ const milestones = [
   {
     date: '2024年10月',
     title: '公司成立',
-    description: '北京词元汇智科技有限公司正式成立',
+    description: '北京词元汇智科技有限公司正式成立，致力于专业智能体研发',
   },
   {
-    date: '2024年12月',
+    date: '2025年5月',
+    title: '获得天使轮投资',
+    description: '获得知名投资机构天使轮融资，加速产品研发和市场拓展',
+  },
+  {
+    date: '2025年8月',
     title: 'TokenX平台发布',
-    description: '推出企业级智能体应用开发平台',
-  },
-  {
-    date: '2025年3月',
-    title: '天使轮融资',
-    description: '获得知名投资机构天使轮投资',
-  },
-  {
-    date: '2025年6月',
-    title: 'DocPilot发布',
-    description: '推出Agent-native IDP平台',
+    description: '推出企业级智能体应用开发与部署平台，支持多种应用形态',
   },
   {
     date: '2025年9月',
     title: '多行业落地',
-    description: '在金融、医疗、法律等行业实现规模化应用',
+    description: '在金融、电力、医疗、政务等行业实现规模化应用',
+  },
+  {
+    date: '2026年3月',
+    title: 'DocPilot发布',
+    description: '推出Agent-native IDP平台，为企业提供复杂文档智能处理能力',
   },
 ];
 
@@ -186,37 +186,40 @@ export default function About() {
               </p>
             </motion.div>
 
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-600 via-purple-500 to-transparent hidden md:block" />
+            {/* 发展历程 - 时间线样式 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative pl-8">
+                {/* 竖线 */}
+                <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-purple-500/30" />
 
-              <div className="space-y-8">
-                {milestones.map((milestone, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className={`flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                  >
-                    <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                      <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 inline-block">
-                        <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-purple-500/20 text-purple-300 mb-2">
-                          {milestone.date}
-                        </span>
-                        <h3 className="text-xl font-bold text-white mb-1">{milestone.title}</h3>
-                        <p className="text-gray-400">{milestone.description}</p>
+                <div className="space-y-0">
+                  {milestones.map((milestone, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="relative pb-8 last:pb-0"
+                    >
+                      {/* 圆点 */}
+                      <div className="absolute left-[-1.25rem] top-1 w-3 h-3 bg-purple-500 rounded-full border-2 border-slate-900" />
+                      
+                      {/* 内容 */}
+                      <div className="pl-4">
+                        <span className="text-purple-400 font-medium text-sm">{milestone.date}</span>
+                        <h3 className="text-white font-bold text-lg mt-1">{milestone.title}</h3>
+                        <p className="text-gray-400 text-sm mt-1">{milestone.description}</p>
                       </div>
-                    </div>
-
-                    <div className="hidden md:flex items-center justify-center w-4 h-4 rounded-full bg-purple-500 z-10" />
-
-                    <div className="flex-1 hidden md:block" />
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 

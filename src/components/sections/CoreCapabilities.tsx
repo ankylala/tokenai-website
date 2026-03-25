@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Layers, Workflow, FileSearch, Shield, Gavel, Database, BrainCircuit, Table, Network } from 'lucide-react';
-import { Card, CardContent } from '../ui';
+import { Layers, Workflow, FileSearch, Shield, Gavel, Database, BrainCircuit, Table, Network, ArrowRight } from 'lucide-react';
+import { Card, CardContent, Button } from '../ui';
 
 const container = {
   hidden: { opacity: 0 },
@@ -121,152 +121,88 @@ export function CoreCapabilities() {
           </motion.p>
         </div>
 
-        {/* Architecture Overview - 金字塔布局 */}
+        {/* 产品矩阵 - 整合展示 */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          {/* 基础层 - 最宽 */}
-          <motion.div variants={item} className="mb-6">
-            <div className="relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[15px] border-t-purple-500" />
-              <Card variant="gradient" className="overflow-hidden border-t-0 pt-4">
-                <CardContent className="p-6 lg:p-8">
-                  <div className="text-center mb-6">
-                    <div className="inline-flex items-center space-x-3 mb-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-400 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/20">
-                        <BrainCircuit className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="text-left">
-                        <span className="text-xs text-purple-400 font-medium uppercase tracking-wider">基础层</span>
-                        <h3 className="text-xl font-bold text-text-primary">三大底层能力引擎</h3>
-                      </div>
-                    </div>
-                    <p className="text-text-muted text-sm max-w-2xl mx-auto">
-                      {capabilities[2].description}
-                    </p>
+          {/* 上半部分：TokenX + DocPilot 左右展示 */}
+          <div className="grid lg:grid-cols-2 gap-6 mb-6">
+            {/* DocPilot */}
+            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-2xl border border-white/10 overflow-hidden">
+              <div className="flex flex-col">
+                {/* 文字部分 */}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Layers className="w-6 h-6 text-pink-400" />
+                    <span className="text-xs text-pink-400 font-medium">应用层</span>
                   </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {capabilities[2].engines?.map((engine, index) => (
-                      <motion.div
-                        key={engine.name}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 * index }}
-                        className="bg-gradient-to-b from-white/5 to-transparent rounded-xl p-5 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group"
-                      >
-                        <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-purple-500/30 transition-colors">
-                          <engine.icon className="w-5 h-5 text-purple-400" />
-                        </div>
-                        <h4 className="text-sm font-semibold text-text-primary mb-2">{engine.name}</h4>
-                        <p className="text-xs text-text-muted leading-relaxed">{engine.desc}</p>
-                      </motion.div>
+                  <h3 className="text-xl font-bold text-white mb-2">DocPilot (驭文)</h3>
+                  <p className="text-sm text-gray-400 mb-4">{capabilities[0].description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {capabilities[0].agents?.slice(0, 3).map((agent, index) => (
+                      <span key={index} className="bg-pink-500/10 text-pink-300 text-xs px-2 py-1 rounded">{agent.name}</span>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          </motion.div>
-
-          {/* 连接线 */}
-          <div className="flex justify-center mb-6">
-            <div className="w-px h-8 bg-gradient-to-b from-purple-500/50 to-cyan-500/50" />
-          </div>
-
-          {/* 中间层 - 中等 */}
-          <motion.div variants={item} className="mb-6">
-            <Card variant="gradient" className="overflow-hidden border-t-4 border-t-cyan-500">
-              <CardContent className="p-6 lg:p-8">
-                <div className="flex flex-col lg:flex-row items-center gap-6">
-                  <div className="lg:w-1/3 text-center lg:text-left">
-                    <div className="inline-flex items-center space-x-3 mb-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20">
-                        <Workflow className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <span className="text-xs text-cyan-400 font-medium uppercase tracking-wider">中枢层</span>
-                        <h3 className="text-xl font-bold text-text-primary">TokenX Agentic AI 平台</h3>
-                      </div>
-                    </div>
-                    <p className="text-text-muted text-sm leading-relaxed">
-                      {capabilities[1].description}
-                    </p>
-                  </div>
-                  
-                  <div className="lg:w-2/3 flex flex-wrap justify-center lg:justify-end gap-2">
-                    {capabilities[1].features?.map((feature, index) => (
-                      <motion.div
-                        key={feature}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.05 * index }}
-                        className="bg-gradient-to-r from-cyan-500/10 to-cyan-400/10 border border-cyan-500/20 rounded-lg px-3 py-2 flex items-center space-x-2"
-                      >
-                        <div className="w-2 h-2 bg-cyan-400 rounded-full" />
-                        <span className="text-xs text-cyan-100 font-medium">{feature}</span>
-                      </motion.div>
-                    ))}
-                  </div>
+                  <Button variant="ghost" size="sm" onClick={() => window.location.href = '/products'}>
+                    了解更多 <ArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+                {/* 图片部分 */}
+                <div className="bg-slate-50 p-4 m-4 rounded-xl">
+                  <img src="/images/products/DocPilot 驭文.png" alt="DocPilot" className="w-full h-auto rounded-lg" />
+                </div>
+              </div>
+            </div>
 
-          {/* 连接线 */}
-          <div className="flex justify-center mb-6">
-            <div className="w-px h-8 bg-gradient-to-b from-cyan-500/50 to-primary/50" />
+            {/* TokenX */}
+            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-2xl border border-white/10 overflow-hidden">
+              <div className="flex flex-col">
+                {/* 文字部分 */}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Workflow className="w-6 h-6 text-purple-400" />
+                    <span className="text-xs text-purple-400 font-medium">中枢层</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">TokenX Agentic AI 平台</h3>
+                  <p className="text-sm text-gray-400 mb-4">{capabilities[1].description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {capabilities[1].features?.slice(0, 4).map((feature, index) => (
+                      <span key={index} className="bg-purple-500/10 text-purple-300 text-xs px-2 py-1 rounded">{feature}</span>
+                    ))}
+                  </div>
+                  <Button variant="ghost" size="sm" onClick={() => window.location.href = '/products'}>
+                    了解更多 <ArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </div>
+                {/* 图片部分 */}
+                <div className="bg-slate-50 p-4 m-4 rounded-xl">
+                  <img src="/images/products/TokenX 平台应用界面.png" alt="TokenX" className="w-full h-auto rounded-lg" />
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* 应用层 - 最小 */}
-          <motion.div variants={item}>
-            <div className="relative">
-              <Card variant="gradient" className="overflow-hidden border-t-4 border-t-primary">
-                <CardContent className="p-6 lg:p-8">
-                  <div className="flex flex-col lg:flex-row gap-6">
-                    <div className="lg:w-1/3">
-                      <div className="flex items-center space-x-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center shadow-glow">
-                          <Layers className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <span className="text-xs text-primary font-medium uppercase tracking-wider">应用层</span>
-                          <h3 className="text-xl font-bold text-text-primary">DocPilot 智能体行业套件</h3>
-                        </div>
-                      </div>
-                      <p className="text-text-muted text-sm leading-relaxed">
-                        {capabilities[0].description}
-                      </p>
-                    </div>
-                    
-                    <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-3">
-                      {capabilities[0].agents?.map((agent, index) => (
-                        <motion.div
-                          key={agent.name}
-                          initial={{ opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.1 * index }}
-                          className="bg-white/5 rounded-lg p-4 border border-white/10 hover:border-primary/30 hover:bg-white/10 transition-all duration-300 group"
-                        >
-                          <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-primary/30 transition-colors">
-                            <agent.icon className="w-4 h-4 text-primary-light" />
-                          </div>
-                          <h4 className="text-xs font-semibold text-text-primary mb-1">{agent.name}</h4>
-                          <p className="text-xs text-text-muted leading-relaxed">{agent.desc}</p>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[15px] border-b-primary" />
+          {/* 下半部分：三大引擎 */}
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-2xl border border-white/10 p-6">
+            <div className="flex items-center gap-3 mb-5">
+              <BrainCircuit className="w-6 h-6 text-purple-400" />
+              <span className="text-xs text-purple-400 font-medium">基础层</span>
+              <span className="text-white font-bold text-lg">三大底层能力引擎</span>
             </div>
-          </motion.div>
+            <div className="grid md:grid-cols-3 gap-4">
+              {capabilities[2].engines?.map((engine, index) => (
+                <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/5 hover:border-purple-500/30 transition-colors">
+                  <div className="flex items-center gap-2 mb-2">
+                    <engine.icon className="w-5 h-5 text-purple-400" />
+                    <span className="text-white font-medium">{engine.name}</span>
+                  </div>
+                  <p className="text-xs text-gray-400">{engine.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         {/* Bottom CTA */}

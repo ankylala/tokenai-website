@@ -57,122 +57,66 @@ export function Products() {
           </p>
         </div>
 
-        {/* Products Grid - Top Row */}
+        {/* Top: TokenX + DocPilot */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-6 mb-8"
         >
-          {PRODUCTS.slice(0, 3).map((product) => {
+          {PRODUCTS.slice(0, 2).map((product) => {
             const Icon = iconMap[product.icon] || Cpu;
             const previewImg = productPreviewImages[product.id];
             return (
-              <motion.div key={product.id} variants={item}>
-                <Card variant="gradient" className="h-full overflow-hidden group">
-                  {/* Product Preview Image */}
-                  {previewImg && (
-                    <div className="relative h-40 overflow-hidden border-b border-white/5">
-                      <img
-                        src={previewImg}
-                        alt={product.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-90"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                    </div>
-                  )}
-                  <CardContent className="p-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary-dark to-primary rounded-lg flex items-center justify-center mb-4 shadow-glow -mt-12 relative z-10 border-2 border-slate-900">
-                      <Icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-text-primary mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-primary-light text-sm mb-3">
-                      {product.slogan}
-                    </p>
-                    <p className="text-text-muted text-sm mb-4">
-                      {product.description}
-                    </p>
-                    <ul className="space-y-2 mb-6">
-                      {product.features.slice(0, 3).map((feature, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start text-sm text-text-secondary"
-                        >
-                          <span className="text-primary mr-2">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => navigate(product.link)}
-                    >
-                      了解更多 →
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              <Card key={product.id} variant="gradient" className="h-full overflow-hidden group">
+                {previewImg && (
+                  <div className="relative h-32 overflow-hidden border-b border-white/5">
+                    <img src={previewImg} alt={product.name} className="w-full h-full object-cover" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+                  </div>
+                )}
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Icon className="w-5 h-5 text-purple-400" />
+                    <h3 className="text-lg font-bold text-white">{product.name}</h3>
+                  </div>
+                  <p className="text-primary-light text-sm mb-2">{product.slogan}</p>
+                  <p className="text-gray-400 text-sm mb-3">{product.description}</p>
+                  <ul className="space-y-1 mb-4">
+                    {product.features.slice(0, 3).map((feature, index) => (
+                      <li key={index} className="flex items-center text-xs text-gray-500">
+                        <span className="text-purple-400 mr-2">•</span>{feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button variant="ghost" size="sm" onClick={() => navigate(product.link)}>了解更多 →</Button>
+                </CardContent>
+              </Card>
             );
           })}
         </motion.div>
 
-        {/* More Products - Bottom Row */}
+        {/* Bottom: Three Engines */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8"
+          className="grid md:grid-cols-3 gap-6"
         >
-          {PRODUCTS.slice(3).map((product) => {
+          {PRODUCTS.slice(2).map((product) => {
             const Icon = iconMap[product.icon] || Cpu;
-            const previewImg = productPreviewImages[product.id];
             return (
-              <motion.div key={product.id} variants={item}>
-                <Card variant="gradient" className="h-full overflow-hidden group">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary-dark to-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-glow">
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-text-primary mb-1">
-                          {product.name}
-                        </h3>
-                        <p className="text-primary-light text-xs mb-2">
-                          {product.slogan}
-                        </p>
-                        <p className="text-text-muted text-sm mb-3">
-                          {product.description}
-                        </p>
-                        {previewImg && (
-                          <div className="mb-3 rounded-lg overflow-hidden border border-white/5 h-32">
-                            <img
-                              src={previewImg}
-                              alt={product.name}
-                              className="w-full h-full object-cover object-top opacity-60 group-hover:opacity-80 transition-all duration-500 group-hover:scale-105"
-                              loading="lazy"
-                            />
-                          </div>
-                        )}
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => navigate(product.link)}
-                        >
-                          了解更多 →
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              <Card key={product.id} variant="gradient" className="h-full overflow-hidden group">
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Icon className="w-5 h-5 text-purple-400" />
+                    <h3 className="text-base font-bold text-white">{product.name}</h3>
+                  </div>
+                  <p className="text-primary-light text-xs mb-2">{product.slogan}</p>
+                  <p className="text-gray-400 text-sm mb-3">{product.description}</p>
+                  <Button variant="ghost" size="sm" onClick={() => navigate(product.link)}>了解更多 →</Button>
+                </CardContent>
+              </Card>
             );
           })}
         </motion.div>

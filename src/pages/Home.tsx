@@ -1,7 +1,6 @@
 import { Navbar, Footer } from '../components/layout';
 import { Hero } from '../components/sections/Hero';
 import { CoreCapabilities } from '../components/sections/CoreCapabilities';
-import { Products } from '../components/sections/Products';
 import Solutions from '../components/sections/Solutions';
 import Timeline from '../components/sections/Timeline';
 import Contact from '../components/sections/Contact';
@@ -13,7 +12,6 @@ export function Home() {
       <main>
         <Hero />
         <CoreCapabilities />
-        <Products />
         <Solutions />
         <Timeline />
         <Contact />
