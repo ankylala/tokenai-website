@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
 import { submitContactForm, openCustomerService, type ContactFormData } from '../../utils/api';
+import { BMap } from './BMap';
 
 const Contact = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -120,8 +121,18 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-purple-400" />
                   </div>
                   <div>
-                    <p className="text-gray-300">北京市海淀区</p>
-                    <p className="text-sm text-gray-500">详细地址请联系获取</p>
+                    <p className="text-gray-300">北京市海淀区成府路45号中关村智造大街C座105B</p>
+                    <p className="text-sm text-gray-500">北京办公地址</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <p className="text-gray-300">上海市浦东新区育仁路188弄1号18层1806室</p>
+                    <p className="text-sm text-gray-500">上海办公地址</p>
                   </div>
                 </div>
 
@@ -130,8 +141,8 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-purple-400" />
                   </div>
                   <div>
-                    <p className="text-gray-300">contact@tokenai.com</p>
-                    <p className="text-sm text-gray-500">商务合作咨询</p>
+                    <p className="text-gray-300">linliang@token-ai.com.cn</p>
+                    <p className="text-sm text-gray-500">联系人邮箱</p>
                   </div>
                 </div>
 
@@ -140,8 +151,8 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-purple-400" />
                   </div>
                   <div>
-                    <p className="text-gray-300">400-XXX-XXXX</p>
-                    <p className="text-sm text-gray-500">服务热线</p>
+                    <p className="text-gray-300">13795366587</p>
+                    <p className="text-sm text-gray-500">联系人：林亮</p>
                   </div>
                 </div>
               </div>
@@ -160,11 +171,8 @@ const Contact = () => {
 
             {/* Map Placeholder */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
-              <div className="aspect-video rounded-lg bg-gradient-to-br from-purple-900/50 to-blue-900/50 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-purple-400 mx-auto mb-2" />
-                  <p className="text-gray-400">地图加载中...</p>
-                </div>
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <BMap longitude={116.327} latitude={39.99} />
               </div>
             </div>
           </motion.div>

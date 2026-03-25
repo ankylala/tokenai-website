@@ -80,15 +80,15 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-text-muted text-sm">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>contact@tokenai.com</span>
+                <span>linliang@token-ai.com.cn</span>
               </li>
               <li className="flex items-start space-x-2 text-text-muted text-sm">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>400-XXX-XXXX</span>
+                <span>13795366587</span>
               </li>
               <li className="flex items-start space-x-2 text-text-muted text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>北京市海淀区</span>
+                <span>北京/上海</span>
               </li>
             </ul>
           </div>

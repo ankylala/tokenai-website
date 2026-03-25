@@ -20,7 +20,7 @@ export function CustomerServiceButton() {
       icon: Phone,
       label: '电话咨询',
       action: () => {
-        window.location.href = 'tel:400-XXX-XXXX';
+        window.location.href = 'tel:13795366587';
         setIsOpen(false);
       },
       color: 'from-blue-600 to-blue-500',
@@ -29,7 +29,7 @@ export function CustomerServiceButton() {
       icon: Mail,
       label: '发送邮件',
       action: () => {
-        window.location.href = 'mailto:contact@tokenai.com';
+        window.location.href = 'mailto:linliang@token-ai.com.cn';
         setIsOpen(false);
       },
       color: 'from-pink-600 to-pink-500',

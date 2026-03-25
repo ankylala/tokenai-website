@@ -38,27 +38,27 @@ const industries = [
 const contactInfo = [
   {
     icon: MapPin,
-    title: '公司地址',
-    content: '北京市海淀区中关村',
-    subContent: '科技园区创新大厦',
+    title: '北京办公地址',
+    content: '北京市海淀区成府路45号中关村智造大街C座105B',
+    subContent: '',
+  },
+  {
+    icon: MapPin,
+    title: '上海办公地址',
+    content: '上海市浦东新区育仁路188弄1号18层1806室',
+    subContent: '',
   },
   {
     icon: Mail,
     title: '商务邮箱',
-    content: 'business@tokenai.com',
+    content: 'linliang@token-ai.com.cn',
     subContent: '7x24小时接收邮件',
   },
   {
     icon: Phone,
     title: '联系电话',
-    content: '400-XXX-XXXX',
-    subContent: '工作日 9:00-18:00',
-  },
-  {
-    icon: Clock,
-    title: '服务时间',
-    content: '周一至周五',
-    subContent: '9:00 - 18:00',
+    content: '13795366587',
+    subContent: '联系人：林亮',
   },
 ];
 
@@ -490,9 +490,9 @@ export default function Contact() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <MapPin className="w-16 h-16 text-purple-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-white mb-2">北京市海淀区</h3>
-                  <p className="text-gray-400">中关村科技园区创新大厦</p>
-                  <p className="text-gray-500 text-sm mt-4">（地图功能可集成百度地图或高德地图API）</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">北京总部</h3>
+                  <p className="text-gray-400">北京市海淀区成府路45号中关村智造大街C座105B</p>
+                  <p className="text-gray-500 text-sm mt-2">上海：上海市浦东新区育仁路188弄1号18层1806室</p>
                 </div>
               </div>
 
