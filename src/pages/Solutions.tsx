@@ -1,292 +1,212 @@
 import { motion } from 'framer-motion';
-import { 
-  Building2, 
-  Heart, 
-  Scale, 
-  Factory, 
-  Landmark, 
-  ShoppingCart,
-  CheckCircle,
-  ArrowRight
-} from 'lucide-react';
 import { Navbar, Footer } from '../components/layout';
+import { Button } from '../components/ui';
+import {
+  Building2,
+  ShieldCheck,
+  UserCheck,
+  Globe,
+  Scale,
+  FileSearch,
+  Shield,
+  Database,
+  ArrowRight,
+  CheckCircle,
+} from 'lucide-react';
 
 const solutions = [
   {
-    id: 'finance',
+    id: 'supply-chain-finance',
     icon: Building2,
-    title: '金融行业',
-    subtitle: '智能文档处理与风控分析',
-    gradient: 'from-purple-600 to-blue-500',
-    description: '为金融机构提供智能化的文档处理和风控分析解决方案，提升业务效率，降低运营风险。',
-    scenarios: [
-      {
-        title: '信贷审批文档处理',
-        desc: '自动化处理贷款申请材料，快速提取关键信息，提升审批效率',
-        benefits: ['处理时间缩短70%', '准确率提升至98%', '人力成本降低60%'],
-      },
-      {
-        title: '合规与风控审查',
-        desc: '智能识别风险点，自动化合规检查，确保业务合规',
-        benefits: ['风险识别准确率95%', '合规检查自动化', '实时风险预警'],
-      },
-      {
-        title: '投研文档智能分析',
-        desc: '自动生成研究报告，快速分析市场数据，辅助投资决策',
-        benefits: ['报告生成效率提升5倍', '数据覆盖面更广', '决策支持更精准'],
-      },
+    title: '供应链金融放贷审核',
+    desc: '银行信审员每天审核保理融资申请，需要逐份比对合同、发票、订单和物流单，确认贸易背景真实性。每笔耗时 1-2 小时，且高度依赖个人经验。',
+    how: [
+      'Agent 自动识别 6 类材料角色，3 秒完成分类',
+      '逐条执行 33 条审核规则，跨文档交叉比对金额、主体、日期',
+      '自动识别贸易背景风险：关联交易、循环贸易、重复发票',
+      '输出研判报告，每条结论附原文引用和字符级坐标',
+      '信审员在工作台中 10 分钟完成终审',
+    ],
+    before: { time: '1-2 小时', role: '逐页翻文件', trace: '手工记录' },
+    after: { time: '10 分钟', role: '审 AI 的结论', trace: '字符级自动溯源' },
+  },
+  {
+    id: 'fake-trade',
+    icon: ShieldCheck,
+    title: '采购合规与虚假贸易穿透式审核',
+    desc: '大型企业每年涉及数万笔采购，采购链条长、参与方多，是虚假贸易和采购违规的高发领域。审计部门面对海量交易，人均日处理量低，且缺乏系统化风险预筛手段。',
+    how: [
+      '"五查"框架穿透式审核：查主体、查交易、查价格、查交付、查付款',
+      '覆盖围标串标、虚假交付、价格虚高、化整为零等八大欺诈模式',
+      '两层穿透：批量预筛（万行级台账秒出结果）→ 单据穿透审核（单笔 1-5 分钟）',
+      '37 条规则三层架构：采购合规 15 条 + 三单匹配 10 条 + 虚假贸易检测 12 条',
+      '自动生成审计底稿，含违规线索 + 风险评分 + 证据链',
+    ],
+    before: { time: '30-60 分钟', role: '抽样审计', trace: '各地不一' },
+    after: { time: '5-10 分钟', role: '全量覆盖', trace: '规则统一执行' },
+  },
+  {
+    id: 'anti-fraud',
+    icon: UserCheck,
+    title: '对公客户涉诈风险识别与防控',
+    desc: '银行在对公客户开户环节需要识别涉诈风险，但人工尽调耗时 2+ 小时，风险维度覆盖不全，各网点审查标准不一致。',
+    how: [
+      '覆盖 7 大风险维度、40+ 风险点（客户基本信息、股权实控人、经营风险、真实意愿、地域风险、行业渠道、外部风险）',
+      '开户材料 × 工商数据 × 司法数据 × 行内数据多源交叉核验',
+      '加权评分模型，自动输出高/中/低风险分级',
+      '风险等级与限额系统联动，高风险自动拦截',
+      '存续期 9 大指标动态监测，24 小时内预警',
+    ],
+    before: { time: '2+ 小时', role: '3-5 个维度', trace: '各网点不一' },
+    after: { time: '< 15 分钟', role: '7 大维度 40+ 风险点', trace: '100% 规则统一' },
+  },
+  {
+    id: 'trade-settlement',
+    icon: Globe,
+    title: '跨境贸易结算单据合规审核',
+    desc: '信用证结算涉及发票、装箱单、提单、保险单等多语言单据，银行单证员需要逐项核对信用证条款与运输单据是否一致，识别不符点。工作量大，差错成本高。',
+    how: [
+      '批量解析多语言混合单据，自动提取关键字段',
+      '信用证条款与运输单据交叉核验',
+      '自动识别不符点，匹配 UCP600 等国际结算规则',
+      '审核结论精确溯源到原始单据',
     ],
   },
   {
-    id: 'medical',
-    icon: Heart,
-    title: '医疗行业',
-    subtitle: '医疗文书智能处理与科研辅助',
-    gradient: 'from-pink-600 to-purple-500',
-    description: '助力医疗机构实现文书智能化处理，提升医疗服务质量，加速科研进程。',
-    scenarios: [
-      {
-        title: '病历文书智能化',
-        desc: '自动结构化病历信息，辅助医生快速了解患者病史',
-        benefits: ['病历录入效率提升3倍', '信息提取准确率98%', '医生工作量减少40%'],
-      },
-      {
-        title: '科研文献分析',
-        desc: '智能检索和分析医学文献，加速科研创新',
-        benefits: ['文献检索效率提升10倍', '自动生成文献综述', '发现潜在研究方向'],
-      },
-      {
-        title: '医疗影像报告解读',
-        desc: '智能解读影像报告，辅助医生诊断',
-        benefits: ['报告解读准确率96%', '诊断时间缩短50%', '误诊率降低30%'],
-      },
-    ],
-  },
-  {
-    id: 'legal',
+    id: 'contract-review',
     icon: Scale,
-    title: '法律行业',
-    subtitle: '法律文书智能审查与生成',
-    gradient: 'from-purple-600 to-pink-500',
-    description: '为法律从业者提供智能化的文书处理工具，提升法律服务效率和质量。',
-    scenarios: [
-      {
-        title: '合同智能审查',
-        desc: '自动识别合同风险点，快速完成合同审核',
-        benefits: ['审查时间缩短80%', '风险识别全面', '合规性自动检查'],
-      },
-      {
-        title: '案例检索分析',
-        desc: '智能检索相关案例，快速生成案例分析报告',
-        benefits: ['检索效率提升8倍', '案例匹配精准', '报告自动生成'],
-      },
-      {
-        title: '法律文书自动生成',
-        desc: '基于模板自动生成标准法律文书',
-        benefits: ['文书生成效率提升5倍', '格式规范统一', '减少人为错误'],
-      },
+    title: '合同条款审查与风险识别',
+    desc: '企业法务每天审阅大量非标合同，需要逐条对照法规、内部制度和商业条款，识别风险点。合同越长、条款越复杂，遗漏风险越高。',
+    how: [
+      '自动提取合同关键要素和条款结构',
+      '50+ 条规则覆盖格式合规、风险条款和交叉验证',
+      '多份合同之间的条款一致性自动比对',
+      '每条审查结论精确溯源到合同原文',
     ],
   },
   {
-    id: 'manufacturing',
-    icon: Factory,
-    title: '制造业',
-    subtitle: '供应链与工程文档智能化',
-    gradient: 'from-blue-600 to-purple-500',
-    description: '助力制造企业实现供应链管理和工程文档处理的智能化升级。',
-    scenarios: [
-      {
-        title: '采购供应链管理',
-        desc: '自动化处理采购订单和供应商文档',
-        benefits: ['订单处理效率提升4倍', '供应链可视化', '供应商管理智能化'],
-      },
-      {
-        title: '工程文档处理',
-        desc: '智能管理工程图纸和技术文档',
-        benefits: ['文档检索效率提升6倍', '版本管理自动化', '知识库智能构建'],
-      },
-      {
-        title: '设备维护记录',
-        desc: '自动化记录和分析设备维护信息',
-        benefits: ['维护效率提升40%', '故障预测准确', '资产管理优化'],
-      },
+    id: 'bidding',
+    icon: FileSearch,
+    title: '招投标文件合规审查',
+    desc: '评标专家面对千页标书，需要核查投标方资质、比对报价、检测串标嫌疑。时间紧、材料多、遗漏风险高。',
+    how: [
+      '投标文件多维度资质核查',
+      '法律法规智能匹配',
+      '防串标风险分析',
+      '输出支持精确溯源的审查报告',
     ],
   },
   {
-    id: 'government',
-    icon: Landmark,
-    title: '政务',
-    subtitle: '行政服务智能化升级',
-    gradient: 'from-indigo-600 to-purple-500',
-    description: '为政府部门提供智能化的行政服务解决方案，提升公共服务质量。',
-    scenarios: [
-      {
-        title: '行政审批自动化',
-        desc: '智能处理行政审批材料，提升审批效率',
-        benefits: ['审批时间缩短60%', '群众满意度提升', '政务透明度增强'],
-      },
-      {
-        title: '政策文件解读',
-        desc: '智能解读政策文件，提供精准政策咨询服务',
-        benefits: ['政策解读准确', '咨询效率提升5倍', '服务覆盖面扩大'],
-      },
-      {
-        title: '公共服务智能化',
-        desc: '智能客服系统，提供24小时公共服务',
-        benefits: ['服务响应即时', '人力成本降低50%', '服务质量稳定'],
-      },
+    id: 'insurance',
+    icon: Shield,
+    title: '保险理赔智能审核',
+    desc: '理赔员需要综合分析车损照片、事故责任书、医疗收据和保险条款，判断赔付金额。多模态材料交叉验证工作量大。',
+    how: [
+      '多模态数据综合分析（图片、文本、表格）',
+      '保险条款自动匹配',
+      '理赔理算建议生成',
+      '审核结论可追溯、可复核',
     ],
   },
   {
-    id: 'retail',
-    icon: ShoppingCart,
-    title: '零售电商',
-    subtitle: '订单与客户服务智能化',
-    gradient: 'from-purple-600 to-indigo-500',
-    description: '助力零售电商企业实现订单处理和客户服务的智能化升级。',
-    scenarios: [
-      {
-        title: '订单发票处理',
-        desc: '自动化处理订单和发票信息',
-        benefits: ['处理效率提升6倍', '错误率降低90%', '财务对账自动化'],
-      },
-      {
-        title: '商品信息管理',
-        desc: '智能管理商品信息和库存数据',
-        benefits: ['信息更新实时', '库存管理精准', '销量预测智能'],
-      },
-      {
-        title: '智能客服系统',
-        desc: 'AI驱动的智能客服，提升客户服务体验',
-        benefits: ['响应时间<1秒', '人工客服成本降低70%', '客户满意度提升'],
-      },
+    id: 'data-query',
+    icon: Database,
+    title: '用自然语言查询业务数据',
+    desc: '业务人员想了解经营数据，但不会写 SQL，每次都要找数据分析师排队。',
+    how: [
+      '直接用自然语言提问："上个月华北区域的设备故障率是多少？"',
+      '系统自动生成查询，覆盖 300+ 类数据库',
+      '结果即时返回，支持图表可视化',
     ],
   },
 ];
 
 export default function Solutions() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-slate-900">
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-b from-slate-900 via-purple-900/20 to-slate-900 overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-          <div className="max-w-7xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                行业解决方案
-              </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                深入行业场景，提供专业化的智能体解决方案
-              </p>
-            </motion.div>
+        {/* Hero */}
+        <section className="relative py-24 bg-gradient-to-b from-slate-900 via-purple-900/10 to-slate-900">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-4xl md:text-5xl font-bold text-white mb-6">
+              每个行业的研判工作都不一样，但背后的需求是一样的：
+            </motion.h1>
+            <p className="text-2xl md:text-3xl text-purple-300 font-medium">
+              可信、可追溯、可审计。
+            </p>
           </div>
         </section>
 
-        {/* Solutions */}
-        <section className="py-24 bg-slate-900">
-          <div className="max-w-7xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
-            <div className="space-y-32">
-              {solutions.map((solution, index) => {
-                const Icon = solution.icon;
-                const isEven = index % 2 === 0;
+        {/* Solutions List */}
+        {solutions.map((sol, index) => (
+          <section key={sol.id} id={sol.id} className={`py-20 ${index % 2 === 0 ? 'bg-slate-900' : 'bg-slate-950'}`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-6">
+                  <sol.icon className="w-7 h-7 text-purple-400" />
+                  <h2 className="text-2xl md:text-3xl font-bold text-white">{sol.title}</h2>
+                </div>
 
-                return (
-                  <motion.div
-                    key={solution.id}
-                    id={solution.id}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {/* Solution Header */}
-                    <div className={`flex items-center gap-4 mb-8 ${isEven ? '' : 'lg:flex-row-reverse lg:justify-end'}`}>
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${solution.gradient} flex items-center justify-center`}>
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white">
-                          {solution.title}
-                        </h2>
-                        <p className="text-purple-400 text-lg">{solution.subtitle}</p>
-                      </div>
+                <div className="grid md:grid-cols-2 gap-12">
+                  {/* Left: Problem & Solution */}
+                  <div>
+                    <div className="mb-8">
+                      <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">场景痛点</h3>
+                      <p className="text-gray-300 leading-relaxed">{sol.desc}</p>
                     </div>
 
-                    {/* Description */}
-                    <p className="text-xl text-gray-300 mb-12 max-w-4xl">
-                      {solution.description}
-                    </p>
-
-                    {/* Scenarios */}
-                    <div className="grid md:grid-cols-3 gap-6">
-                      {solution.scenarios.map((scenario, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.4, delay: idx * 0.1 }}
-                          whileHover={{ y: -8 }}
-                          className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
-                        >
-                          <h3 className="text-xl font-bold text-white mb-3">
-                            {scenario.title}
-                          </h3>
-                          <p className="text-gray-400 mb-4 text-sm">
-                            {scenario.desc}
-                          </p>
-
-                          {/* Benefits */}
-                          <div className="space-y-2 pt-4 border-t border-purple-500/20">
-                            {scenario.benefits.map((benefit, bidx) => (
-                              <div key={bidx} className="flex items-start gap-2 text-sm">
-                                <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
-                                <span className="text-gray-300">{benefit}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </motion.div>
-                      ))}
+                    <div>
+                      <h3 className="text-sm font-medium text-purple-400 uppercase tracking-wider mb-3">TokenAI 如何解决</h3>
+                      <ul className="space-y-2">
+                        {sol.how.map((h, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                            <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </motion.div>
-                );
-              })}
+                  </div>
+
+                  {/* Right: Before/After Table */}
+                  {sol.before && (
+                    <div className="bg-slate-800/50 rounded-xl p-6 border border-white/10">
+                      <h3 className="text-white font-bold mb-4">效果对比</h3>
+                      <div className="grid grid-cols-3 gap-4 text-sm">
+                        <div className="text-gray-500 font-medium">指标</div>
+                        <div className="text-gray-400 font-medium text-center">之前</div>
+                        <div className="text-purple-400 font-medium text-center">之后</div>
+
+                        <div className="text-gray-300">单笔耗时</div>
+                        <div className="text-gray-400 text-center">{sol.before.time}</div>
+                        <div className="text-white font-medium text-center">{sol.after.time}</div>
+
+                        <div className="text-gray-300">人的角色</div>
+                        <div className="text-gray-400 text-center">{sol.before.role}</div>
+                        <div className="text-white font-medium text-center">{sol.after.role}</div>
+
+                        <div className="text-gray-300">审计留痕</div>
+                        <div className="text-gray-400 text-center">{sol.before.trace}</div>
+                        <div className="text-white font-medium text-center">{sol.after.trace}</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
             </div>
-          </div>
-        </section>
+          </section>
+        ))}
 
-        {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-900/95">
-          <div className="max-w-7xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-12 border border-purple-500/20 text-center"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                为您的行业定制解决方案
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                联系我们的解决方案专家，获取专属的行业应用方案
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white font-medium transition-all duration-300">
-                  预约咨询
-                </button>
-                <button className="px-8 py-3 rounded-lg bg-slate-700/50 hover:bg-slate-700 text-white font-medium border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
-                  查看案例
-                </button>
-              </div>
-            </motion.div>
+        {/* CTA */}
+        <section className="py-20 bg-gradient-to-r from-purple-900/40 to-blue-900/40">
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">让我们为您演示</h2>
+            <p className="text-gray-300 mb-8">20 分钟了解 TokenAI 如何将您的研判与审查效率提升 6-10 倍。</p>
+            <Button variant="primary" size="lg" onClick={() => window.location.href = '/contact#apply'}>
+              预约产品演示 <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </div>
         </section>
       </main>
