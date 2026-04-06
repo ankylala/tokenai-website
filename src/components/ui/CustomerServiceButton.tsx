@@ -1,21 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Phone, Mail, ExternalLink } from 'lucide-react';
-import { openCustomerService } from '../../utils/api';
+import { Phone, Mail, MessageCircle, X, ExternalLink } from 'lucide-react';
 
 export function CustomerServiceButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   const contactOptions = [
-    {
-      icon: MessageCircle,
-      label: '在线客服',
-      action: () => {
-        openCustomerService();
-        setIsOpen(false);
-      },
-      color: 'from-purple-600 to-purple-500',
-    },
     {
       icon: Phone,
       label: '电话咨询',

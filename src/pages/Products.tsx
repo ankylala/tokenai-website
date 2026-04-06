@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { Navbar, Footer } from '../components/layout';
 import { Button } from '../components/ui';
 import {
@@ -101,6 +103,17 @@ const engines = [
 ];
 
 export default function Products() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="min-h-screen bg-slate-900">
       <Navbar />
