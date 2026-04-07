@@ -33,6 +33,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/customers" className="text-text-muted hover:text-primary transition-colors text-sm">
+                  客户案例
+                </a>
+              </li>
+              <li>
                 <a href="/about" className="text-text-muted hover:text-primary transition-colors text-sm">
                   关于我们
                 </a>
@@ -50,23 +55,28 @@ export function Footer() {
             <h4 className="text-text-primary font-semibold mb-4">核心产品</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/products/tokenx" className="text-text-muted hover:text-primary transition-colors text-sm">
+                <a href="/products#tokenx" className="text-text-muted hover:text-primary transition-colors text-sm">
                   TokenX平台
                 </a>
               </li>
               <li>
-                <a href="/products/docpilot" className="text-text-muted hover:text-primary transition-colors text-sm">
+                <a href="/products#docpilot" className="text-text-muted hover:text-primary transition-colors text-sm">
                   DocPilot驭文
                 </a>
               </li>
               <li>
-                <a href="/products/text-intelligence" className="text-text-muted hover:text-primary transition-colors text-sm">
-                  多模态文本智能
+                <a href="/products#text-intelligence" className="text-text-muted hover:text-primary transition-colors text-sm">
+                  文本智能引擎
                 </a>
               </li>
               <li>
-                <a href="/products/data-intelligence" className="text-text-muted hover:text-primary transition-colors text-sm">
+                <a href="/products#data-intelligence" className="text-text-muted hover:text-primary transition-colors text-sm">
                   数据智能
+                </a>
+              </li>
+              <li>
+                <a href="/products#knowledge-engine" className="text-text-muted hover:text-primary transition-colors text-sm">
+                  知识引擎
                 </a>
               </li>
             </ul>
