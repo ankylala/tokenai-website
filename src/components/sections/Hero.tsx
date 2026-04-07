@@ -24,11 +24,6 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          {/* Category Tag */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 backdrop-blur-sm">
-            <span className="text-purple-300 text-sm font-medium tracking-wider">Trusted Judgment AI</span>
-          </div>
-
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
             让 AI 的专业判断，<br className="hidden md:block" />值得被信赖
@@ -48,30 +43,9 @@ export function Hero() {
               了解产品
             </Button>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto pt-12 border-t border-white/10">
-            {[
-              { label: '头部客户', value: '5+' },
-              { label: '覆盖行业', value: '5 个' },
-              { label: '场景复用率', value: '95%' },
-              { label: '私有化部署', value: '100%' },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </div>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-purple-500/50 rounded-full flex items-start justify-center p-1">
-          <div className="w-1.5 h-3 bg-purple-500 rounded-full animate-fade-in" />
-        </div>
-      </div>
     </section>
   );
 }

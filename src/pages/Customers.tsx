@@ -37,10 +37,10 @@ const cases = [
     industry: '通信',
     icon: Database,
     scene: '集团级经营数据查询与分析智能体',
-    challenge: '集团经营数据分散在 300+ 个数据库、1000+ 张业务表中，业务人员无法直接获取所需数据。',
+    challenge: '集团经营数据分散在 30+ 个数据库、1000+ 张业务表中，业务人员无法直接获取所需数据。',
     solution: '部署 NL2SQL 数据智能引擎，业务人员通过自然语言提问即可获取经营数据和分析报表。',
     results: [
-      '覆盖 300+ 数据库、1000+ 业务表、亿级运营数据',
+      '覆盖 30+ 数据库、1000+ 业务表、亿级运营数据',
       '业务人员自助查询，无需依赖数据团队',
     ],
   },
@@ -81,7 +81,7 @@ export default function Customers() {
         <section className="relative py-24 bg-gradient-to-b from-slate-900 via-purple-900/10 to-slate-900">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-4xl md:text-5xl font-bold text-white mb-6">
-              已在多个头部企业和政府机构中规模化落地
+              已在多个头部企业和政府机构中落地
             </motion.h1>
           </div>
         </section>

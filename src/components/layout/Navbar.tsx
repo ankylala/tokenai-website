@@ -5,11 +5,11 @@ import { Button } from '../ui';
 import { twMerge } from 'tailwind-merge';
 
 const productLinks = [
-  { label: 'DocPilot', href: '/products#docpilot' },
-  { label: 'TokenX', href: '/products#tokenx' },
-  { label: '文本智能引擎', href: '/products#text-intelligence' },
-  { label: '知识引擎', href: '/products#knowledge-engine' },
-  { label: '数据智能', href: '/products#data-intelligence' },
+  { label: 'DocPilot (驭文)', href: '/products#docpilot' },
+  { label: 'TokenX Agentic AI 平台', href: '/products#tokenx' },
+  { label: '多模态文本智能引擎', href: '/products#text-intelligence' },
+  { label: '多模态知识引擎', href: '/products#knowledge-engine' },
+  { label: '数据智能（NL2SQL）引擎', href: '/products#data-intelligence' },
 ];
 
 const solutionLinks = [

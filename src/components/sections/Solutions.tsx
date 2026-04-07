@@ -1,54 +1,70 @@
 import { motion } from 'framer-motion';
-import { Building2, Heart, Scale, Factory, Landmark, ShoppingCart } from 'lucide-react';
+import { Building2, ShieldCheck, UserCheck, Globe, Scale, FileSearch, Heart, Database } from 'lucide-react';
 
 const solutions = [
   {
-    id: 'finance',
+    id: 'supply-chain-finance',
     icon: Building2,
-    title: '金融行业',
-    description: '智能文档处理与风控分析',
-    scenarios: ['信贷审批文档处理', '合规与风控审查', '投研文档智能分析'],
+    title: '供应链金融放贷审核',
+    description: '银行信审员每天审核保理融资申请，需要逐份比对合同、发票、订单和物流单，确认贸易背景真实性。',
+    advantages: ['6类材料3秒自动分类', '33条规则跨文档交叉比对', '10分钟完成终审'],
     gradient: 'from-purple-600 to-blue-500',
   },
   {
-    id: 'medical',
-    icon: Heart,
-    title: '医疗行业',
-    description: '医疗文书智能处理与科研辅助',
-    scenarios: ['病历文书智能化', '科研文献分析', '医疗影像报告解读'],
+    id: 'fake-trade',
+    icon: ShieldCheck,
+    title: '虚假贸易穿透审核',
+    description: '大型企业每年涉及数万笔采购，采购链条长、参与方多，是虚假贸易和采购违规的高发领域。',
+    advantages: ['"五查"框架穿透式审核', '覆盖八大欺诈模式', '自动生成审计底稿'],
     gradient: 'from-pink-600 to-purple-500',
   },
   {
-    id: 'legal',
-    icon: Scale,
-    title: '法律行业',
-    description: '法律文书智能审查与生成',
-    scenarios: ['合同智能审查', '案例检索分析', '法律文书自动生成'],
+    id: 'anti-fraud',
+    icon: UserCheck,
+    title: '对公反电诈',
+    description: '银行在对公客户开户环节需要识别涉诈风险，但人工尽调耗时2+小时，风险维度覆盖不全。',
+    advantages: ['7大维度40+风险点覆盖', '多源数据交叉核验', '存续期动态监测预警'],
     gradient: 'from-purple-600 to-pink-500',
   },
   {
-    id: 'manufacturing',
-    icon: Factory,
-    title: '制造业',
-    description: '供应链与工程文档智能化',
-    scenarios: ['采购供应链管理', '工程文档处理', '设备维护记录'],
+    id: 'trade-settlement',
+    icon: Globe,
+    title: '国际贸易结算',
+    description: '信用证结算涉及发票、装箱单、提单等多语言单据，银行单证员需要逐项核对条款是否一致。',
+    advantages: ['多语言混合单据解析', 'UCP600规则自动匹配', '审核结论精确溯源'],
     gradient: 'from-blue-600 to-purple-500',
   },
   {
-    id: 'government',
-    icon: Landmark,
-    title: '政务',
-    description: '行政服务智能化升级',
-    scenarios: ['行政审批自动化', '政策文件解读', '公共服务智能化'],
+    id: 'contract-review',
+    icon: Scale,
+    title: '智能合同审查',
+    description: '企业法务每天审阅大量非标合同，需要逐条对照法规、内部制度和商业条款，识别风险点。',
+    advantages: ['50+条审查规则', '条款一致性比对', '结论精确溯源到原文'],
     gradient: 'from-indigo-600 to-purple-500',
   },
   {
-    id: 'retail',
-    icon: ShoppingCart,
-    title: '零售电商',
-    description: '订单与客户服务智能化',
-    scenarios: ['订单发票处理', '商品信息管理', '智能客服系统'],
+    id: 'bidding',
+    icon: FileSearch,
+    title: '招投标合规审查',
+    description: '大篇幅标书的资质核查与防串标分析，投标文件多维度合规校验，法律法规智能匹配。',
+    advantages: ['多维度资质合规校验', '法律法规智能匹配', '审查报告精确溯源'],
     gradient: 'from-purple-600 to-indigo-500',
+  },
+  {
+    id: 'insurance',
+    icon: Heart,
+    title: '保险智能核赔',
+    description: '车损、医疗等多模态理赔审核，照片、收据、条款等多源数据综合分析。',
+    advantages: ['多模态数据综合分析', '条款自动匹配', '理赔理算建议自动生成'],
+    gradient: 'from-orange-600 to-red-500',
+  },
+  {
+    id: 'data-query',
+    icon: Database,
+    title: '企业数据查询',
+    description: '集团经营数据分散在30+个数据库、1000+张业务表中，业务人员无法直接获取所需数据。',
+    advantages: ['自然语言直接查询', '覆盖30+数据库/1000+表', '亿级运营数据支持'],
+    gradient: 'from-cyan-600 to-blue-500',
   },
 ];
 
@@ -65,10 +81,10 @@ const Solutions = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            行业解决方案
+            解决方案
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            面向金融、医疗、法律、制造、政务、零售等多行业，提供专业的智能化解决方案
+            覆盖供应链金融、虚假贸易穿透、对公反电诈、国际贸易、合同审查、招投标、保险核赔、数据查询等场景
           </p>
         </motion.div>
 
@@ -102,30 +118,17 @@ const Solutions = () => {
                     <h3 className="text-xl font-bold text-white mb-2">{solution.title}</h3>
                     
                     {/* Description */}
-                    <p className="text-gray-400 mb-4 text-sm">{solution.description}</p>
+                    <p className="text-gray-400 text-sm mb-4">{solution.description}</p>
 
-                    {/* Scenarios */}
-                    <ul className="space-y-2">
-                      {solution.scenarios.map((scenario, idx) => (
+                    {/* Advantages */}
+                    <ul className="space-y-1">
+                      {solution.advantages.map((adv, idx) => (
                         <li key={idx} className="flex items-start text-sm text-gray-300">
                           <span className="text-purple-400 mr-2">•</span>
-                          {scenario}
+                          {adv}
                         </li>
                       ))}
                     </ul>
-
-                    {/* Learn More */}
-                    <div className="mt-4 pt-4 border-t border-purple-500/20">
-                      <a
-                        href="#"
-                        className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
-                      >
-                        了解更多
-                        <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </a>
-                    </div>
                   </div>
                 </div>
               </motion.div>

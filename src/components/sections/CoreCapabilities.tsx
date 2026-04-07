@@ -58,7 +58,7 @@ const capabilities = [
     description: '提供从文档理解到知识构建、数据分析的全栈能力支撑',
     engines: [
       {
-        name: '多模态大模型文本智能引擎',
+        name: '多模态文本智能引擎',
         icon: FileSearch,
         desc: '克服高噪、水印等干扰，高精度解析手写、印章、复杂表格，将非标文档转化为结构化数据（抽取准确率达 95%+）。',
       },
