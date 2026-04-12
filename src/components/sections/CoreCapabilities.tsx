@@ -23,7 +23,7 @@ const capabilities = [
     title: 'DocPilot 智能体行业套件',
     subtitle: '应用层',
     icon: Layers,
-    description: '面向具体业务场景的成品 Agent，支持问答、抽取、比对等 12 类智能文档处理（IDP）任务',
+    description: '一句话指令，全自动处理。像 Cursor 改变编程一样，改变文档处理方式。用户只需通过自然语言对话，即可完成复杂文档的解析、抽取、审核、对比和报告生成——从小时级缩短至分钟级',
     agents: [
       {
         name: '供应链与风控 Agent',
@@ -218,7 +218,7 @@ export function CoreCapabilities() {
               <p className="text-text-muted text-sm mb-1">想要了解更多产品能力？</p>
               <p className="text-text-primary font-medium">获取完整产品白皮书和技术文档</p>
             </div>
-            <button className="bg-gradient-to-r from-primary to-primary-light text-white px-6 py-3 rounded-xl font-medium hover:shadow-glow transition-all duration-300 hover:scale-105">
+            <button onClick={() => window.location.href = '/contact#apply'} className="bg-gradient-to-r from-primary to-primary-light text-white px-6 py-3 rounded-xl font-medium hover:shadow-glow transition-all duration-300 hover:scale-105">
               预约演示
             </button>
           </div>

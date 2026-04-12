@@ -39,37 +39,50 @@ export default function About() {
       <main>
         {/* Hero */}
         <section className="relative py-24 bg-gradient-to-b from-slate-900 via-purple-900/10 to-slate-900">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="inline-flex items-center px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 mb-6">
-                <span className="text-purple-300 text-sm font-medium tracking-wider">Trusted Judgment AI</span>
+              {/* Tag */}
+              <div className="flex justify-center mb-8">
+                <div className="inline-flex items-center px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10">
+                  <span className="text-purple-300 text-sm font-medium tracking-wider">Trusted Judgment AI</span>
+                </div>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+
+              {/* Title */}
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-10 text-center">
                 TokenAI · 为高要求行业打造可信赖的 AI 专家
               </h1>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                北京词元汇智科技有限公司（TokenAI）成立于 2024 年 10 月，专注于 Trusted Judgment AI——为金融、能源、司法、专业服务等高要求行业打造可信赖的 AI 专家。
-              </p>
-              <p className="text-lg text-gray-500 mt-4 max-w-3xl mx-auto">
-                我们的核心产品包括 DocPilot 智能体行业套件、TokenX Agentic AI 平台和数据智能引擎，已在中国铁塔、省级农商银行、国家电网、上海高级人民法院等头部机构中规模化落地。
-              </p>
-            </motion.div>
-          </div>
-        </section>
 
-        {/* Key Numbers */}
-        <section className="py-20 bg-slate-950">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl font-bold text-white mb-12 text-center">关键数字</motion.h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {keyNumbers.map((item, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-slate-800/50 rounded-xl p-5 border border-white/5 hover:border-purple-500/30 transition-colors">
-                  <item.icon className="w-6 h-6 text-purple-400 mb-3" />
-                  <span className="text-gray-500 text-sm">{item.label}</span>
-                  <p className="text-white font-medium mt-1">{item.value}</p>
-                </motion.div>
-              ))}
-            </div>
+              {/* Content Grid */}
+              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {/* Left: Company Intro */}
+                <div className="bg-slate-800/50 rounded-2xl p-8 border border-white/10">
+                  <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-purple-500 rounded"></span>
+                    关于我们
+                  </h2>
+                  <p className="text-gray-300 leading-relaxed">
+                    北京词元汇智科技有限公司（TokenAI）成立于 2024 年 10 月，专注于 <span className="text-purple-400 font-medium">Trusted Judgment AI</span>——为金融、能源、司法、专业服务等高要求行业打造可信赖的 AI 专家。
+                  </p>
+                </div>
+
+                {/* Right: Products & Customers */}
+                <div className="bg-slate-800/50 rounded-2xl p-8 border border-white/10">
+                  <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-purple-500 rounded"></span>
+                    核心产品与客户
+                  </h2>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    核心产品包括 <span className="text-white font-medium">DocPilot 智能体行业套件</span>、<span className="text-white font-medium">TokenX Agentic AI 平台</span>和<span className="text-white font-medium">数据智能引擎</span>。
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {['中国铁塔', '省级农商银行', '国家电网', '上海高院'].map((c, i) => (
+                      <span key={i} className="px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full border border-purple-500/30">{c}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 

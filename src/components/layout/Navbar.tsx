@@ -7,20 +7,20 @@ import { twMerge } from 'tailwind-merge';
 const productLinks = [
   { label: 'DocPilot (驭文)', href: '/products#docpilot' },
   { label: 'TokenX Agentic AI 平台', href: '/products#tokenx' },
-  { label: '多模态文本智能引擎', href: '/products#text-intelligence' },
+  { label: '多模态文本智能引擎', href: '/text-intelligence' },
   { label: '多模态知识引擎', href: '/products#knowledge-engine' },
-  { label: '数据智能（NL2SQL）引擎', href: '/products#data-intelligence' },
+  { label: '数据智能（NL2SQL）引擎', href: '/nl2sql' },
 ];
 
 const solutionLinks = [
-  { label: '供应链金融', href: '/solutions#supply-chain-finance' },
-  { label: '虚假贸易穿透', href: '/solutions#fake-trade' },
-  { label: '对公反电诈', href: '/solutions#anti-fraud' },
-  { label: '国际贸易', href: '/solutions#trade-settlement' },
-  { label: '合同审查', href: '/solutions#contract-review' },
-  { label: '招投标', href: '/solutions#bidding' },
-  { label: '保险核赔', href: '/solutions#insurance' },
-  { label: '数据查询', href: '/solutions#data-query' },
+  { label: '供应链金融放贷审核', href: '/supply-chain-finance' },
+  { label: '采购合规与虚假贸易穿透式审核', href: '/fake-trade' },
+  { label: '对公客户涉诈风险识别与防控', href: '/solutions#anti-fraud' },
+  { label: '跨境贸易结算单据合规审核', href: '/solutions#trade-settlement' },
+  { label: '合同条款审查与风险识别', href: '/contract-review' },
+  { label: '招投标合规审查', href: '/solutions#bidding' },
+  { label: '保险智能核赔', href: '/solutions#insurance' },
+  { label: '企业数据查询', href: '/nl2sql' },
 ];
 
 const navItems = [

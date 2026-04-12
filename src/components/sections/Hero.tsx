@@ -10,7 +10,7 @@ export function Hero() {
         style={{ backgroundImage: 'url(/images/backbend/外滩.jpeg)' }}
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/40" />
       
       {/* Animated gradient orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" />

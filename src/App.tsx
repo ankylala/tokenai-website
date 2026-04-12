@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CustomerServiceButton } from './components/ui';
 import './index.css';
 
 // 懒加载页面组件
@@ -12,6 +11,11 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Customers = lazy(() => import('./pages/Customers'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
+const TextIntelligence = lazy(() => import('./pages/TextIntelligence'));
+const ContractReview = lazy(() => import('./pages/ContractReview'));
+const SupplyChainFinance = lazy(() => import('./pages/SupplyChainFinance'));
+const FakeTradePenetration = lazy(() => import('./pages/FakeTradePenetration'));
+const NL2SQL = lazy(() => import('./pages/NL2SQL'));
 
 // 加载中组件
 function LoadingSpinner() {
@@ -38,9 +42,13 @@ function App() {
           <Route path="/customers" element={<Customers />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/text-intelligence" element={<TextIntelligence />} />
+          <Route path="/contract-review" element={<ContractReview />} />
+          <Route path="/supply-chain-finance" element={<SupplyChainFinance />} />
+          <Route path="/fake-trade" element={<FakeTradePenetration />} />
+          <Route path="/nl2sql" element={<NL2SQL />} />
         </Routes>
       </Suspense>
-      <CustomerServiceButton />
     </Router>
   );
 }
