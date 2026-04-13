@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Building2, ShieldCheck, UserCheck, Globe, Scale, FileSearch, Heart, Database } from 'lucide-react';
+import { Building2, ShieldCheck, Globe, Scale, FileSearch, Heart, Database } from 'lucide-react';
 
 const solutions = [
   {
@@ -17,14 +17,6 @@ const solutions = [
     description: '大型企业每年涉及数万笔采购，采购链条长、参与方多，是虚假贸易和采购违规的高发领域。',
     advantages: ['"五查"框架穿透式审核', '覆盖八大欺诈模式', '自动生成审计底稿'],
     gradient: 'from-pink-600 to-purple-500',
-  },
-  {
-    id: 'anti-fraud',
-    icon: UserCheck,
-    title: '对公反电诈',
-    description: '银行在对公客户开户环节需要识别涉诈风险，但人工尽调耗时2+小时，风险维度覆盖不全。',
-    advantages: ['7大维度40+风险点覆盖', '多源数据交叉核验', '存续期动态监测预警'],
-    gradient: 'from-purple-600 to-pink-500',
   },
   {
     id: 'trade-settlement',
@@ -58,15 +50,7 @@ const solutions = [
     advantages: ['多模态数据综合分析', '条款自动匹配', '理赔理算建议自动生成'],
     gradient: 'from-orange-600 to-red-500',
   },
-  {
-    id: 'data-query',
-    icon: Database,
-    title: '企业数据查询',
-    description: '集团经营数据分散在30+个数据库、1000+张业务表中，业务人员无法直接获取所需数据。',
-    advantages: ['自然语言直接查询', '覆盖30+数据库/1000+表', '亿级运营数据支持'],
-    gradient: 'from-cyan-600 to-blue-500',
-  },
-];
+  ];
 
 const Solutions = () => {
   return (
@@ -84,7 +68,7 @@ const Solutions = () => {
             解决方案
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            覆盖供应链金融、虚假贸易穿透、对公反电诈、国际贸易、合同审查、招投标、保险核赔、数据查询等场景
+            覆盖供应链金融、虚假贸易穿透、国际贸易、合同审查、招投标、保险核赔等场景
           </p>
         </motion.div>
 

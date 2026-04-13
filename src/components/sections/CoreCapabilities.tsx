@@ -58,9 +58,9 @@ const capabilities = [
     description: '提供从文档理解到知识构建、数据分析的全栈能力支撑',
     engines: [
       {
-        name: '多模态文本智能引擎',
+        name: '多模态大模型文本智能',
         icon: FileSearch,
-        desc: '克服高噪、水印等干扰，高精度解析手写、印章、复杂表格，将非标文档转化为结构化数据（抽取准确率达 95%+）。',
+        desc: '克服高噪、水印等干扰，高精度解析手写、印章、复杂表格，将非标文档转化为结构化数据（抽取准确率达 98%+）。',
       },
       {
         name: '多模态知识引擎',
@@ -70,7 +70,7 @@ const capabilities = [
       {
         name: '数据智能（NL2SQL）引擎',
         icon: Database,
-        desc: '支持业务人员以自然语言交互 300+ 类异构数据库。结合专有 RAG 技术与 Schema 训练，实现复杂查询与动态图表生成。',
+        desc: '打破底层数据壁垒，支持业务人员通过自然语言跨越多类型异构数据库进行自助查询。依托专有 RAG 与 Schema 联合训练，将复杂查询需求实时转化为动态图表。',
       },
     ],
   },
@@ -95,7 +95,6 @@ export function CoreCapabilities() {
             className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6"
           >
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-sm text-text-secondary">Full-stack Solution</span>
           </motion.div>
           
           <motion.h2
@@ -115,9 +114,7 @@ export function CoreCapabilities() {
             transition={{ delay: 0.2 }}
             className="text-lg text-text-muted max-w-3xl mx-auto leading-relaxed"
           >
-            TokenAI 为企业提供从底层算力引擎到顶层业务闭环的
-            <span className="text-primary font-semibold">"全栈（Full-stack）"</span>
-            智能体解决方案
+            TokenAI 为企业提供从"多模态底层模型"到"智能体业务中枢"，再到"顶层场景闭环"的全栈式可信 AI 解决方案
           </motion.p>
         </div>
 

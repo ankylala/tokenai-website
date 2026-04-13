@@ -28,7 +28,7 @@ export default function Terms() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>TokenX平台：</strong>企业级智能体编排底座，支持Agent工作流构建</li>
                   <li><strong>DocPilot：</strong>面向具体业务场景的智能文档处理（IDP）产品</li>
-                  <li><strong>三大底层能力引擎：</strong>多模态文本智能引擎、多模态知识引擎、数据智能引擎</li>
+                  <li><strong>三大底层能力引擎：</strong>多模态大模型文本智能、多模态知识引擎、数据智能引擎</li>
                   <li><strong>定制化解决方案：</strong>根据客户需求提供的行业专属AI解决方案</li>
                 </ul>
               </section>

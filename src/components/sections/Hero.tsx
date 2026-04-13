@@ -30,8 +30,8 @@ export function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            TokenAI 为高要求行业打造可信赖的 AI 专家。AI 专家做判断，人做终审——每个结论可追溯、可审计、可复核。
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed text-center">
+            TokenAI 为高要求行业打造可信赖的 AI 专家<br/>AI 专家做判断，人做终审——每个结论可追溯、可审计、可复核
           </p>
 
           {/* CTA Buttons */}

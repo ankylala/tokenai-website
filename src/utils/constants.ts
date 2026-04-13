@@ -3,7 +3,7 @@ import type { Product, Solution, Milestone, NavLink } from '../types';
 export const COMPANY_INFO = {
   name: 'TokenAI',
   fullName: '北京词元汇智科技有限公司',
-  slogan: '专业智能体领导者',
+  slogan: '为高要求行业打造可信赖的AI专家',
   vision: '构建专业领域超级智能体，赋能每一位专业领域工作者，重塑未来工作模式',
   mission: '解决专业领域中耗时、耗力、易出错的工作难题，解放专业工作者生产力',
   culture: [

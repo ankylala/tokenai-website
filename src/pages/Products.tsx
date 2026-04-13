@@ -57,7 +57,7 @@ const products = [
   {
     id: 'text-intelligence',
     icon: FileText,
-    title: '多模态文本智能引擎',
+    title: '多模态大模型文本智能',
     subtitle: '让 AI 看懂真实世界的文档',
     desc: '将非标文档转化为高质量结构化数据，支持复杂版面解析、手写体识别、印章解析等。',
     color: 'cyan',
@@ -143,9 +143,9 @@ const engines = [
   {
     id: 'text-intelligence',
     icon: FileText,
-    title: '多模态文本智能引擎',
+    title: '多模态大模型文本智能',
     subtitle: '让 AI 看懂真实世界的文档',
-    desc: '企业真实文档远比 PDF 文本复杂——手写批注、骑缝章、扭曲表格、水印干扰、扫描噪声。多模态文本智能引擎是 TokenAI 全栈架构的感知层，将非标文档转化为高质量结构化数据。',
+    desc: '企业真实文档远比 PDF 文本复杂——手写批注、骑缝章、扭曲表格、水印干扰、扫描噪声。多模态大模型文本智能是 TokenAI 全栈架构的感知层，将非标文档转化为高质量结构化数据。',
     features: [
       '复杂版面解析：多栏、嵌套表格、跨页表格',
       '手写体识别：中英文手写批注、签名、手填表单',
@@ -175,9 +175,9 @@ const engines = [
     subtitle: '用自然语言查询业务数据',
     desc: '让业务人员直接用自然语言提问，系统自动生成 SQL 查询并返回结果，无需依赖数据分析师。',
     features: [
-      '支持 300+ 类异构数据库',
-      '自然语言到 SQL 的精准转换',
-      '自动生成分析报表和可视化图表',
+      '打破底层数据壁垒，支持自然语言跨越多类型数据库自助查询',
+      '专有 RAG 与 Schema 联合训练，复杂查询实时转化',
+      '自动生成动态图表与可视化报表',
       '已在头部通信企业部署，覆盖亿级数据',
     ],
   },
@@ -202,7 +202,7 @@ function DocPilotDetail({ onBack }: { onBack: () => void }) {
 
       <div className="flex justify-center gap-8 mb-16">
         <div className="text-center"><div className="text-4xl font-bold text-purple-400">12</div><div className="text-sm text-gray-400 mt-1">类任务统一平台</div></div>
-        <div className="text-center"><div className="text-4xl font-bold text-purple-400">95%+</div><div className="text-sm text-gray-400 mt-1">信息抽取精度</div></div>
+        <div className="text-center"><div className="text-4xl font-bold text-purple-400">98%+</div><div className="text-sm text-gray-400 mt-1">信息抽取精度</div></div>
         <div className="text-center"><div className="text-4xl font-bold text-purple-400">0</div><div className="text-sm text-gray-400 mt-1">代码切换场景</div></div>
       </div>
 
@@ -452,7 +452,7 @@ function EngineDetail({ engine, onBack }: { engine: typeof engines[0]; onBack: (
         <div className="bg-slate-800/50 rounded-xl p-6 border border-white/10">
           <h4 className="text-white font-bold mb-4">关键指标</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex justify-between"><span className="text-gray-400">抽取准确率</span><span className="text-white font-medium">95%+</span></li>
+            <li className="flex justify-between"><span className="text-gray-400">抽取准确率</span><span className="text-white font-medium">98%+</span></li>
             <li className="flex justify-between"><span className="text-gray-400">支持文档类型</span><span className="text-white font-medium">{engine.id === 'text-intelligence' ? '合同、发票、报表、标书等' : engine.id === 'knowledge-engine' ? '政策法规、合同、行业标准' : '经营数据、业务报表'}</span></li>
             <li className="flex justify-between"><span className="text-gray-400">支持格式</span><span className="text-white font-medium">{engine.id === 'text-intelligence' ? 'PDF、图片、扫描件、Office' : engine.id === 'knowledge-engine' ? '结构化图谱、非结构化文档' : '300+ 类数据库'}</span></li>
           </ul>

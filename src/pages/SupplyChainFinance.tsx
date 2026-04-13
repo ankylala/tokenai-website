@@ -81,7 +81,7 @@ export default function SupplyChainFinance() {
                 <div className="flex gap-6">
                   <div className="text-center"><div className="text-4xl font-bold text-white">10x</div><div className="text-sm text-purple-200 mt-1">审核效率提升</div></div>
                   <div className="text-center"><div className="text-4xl font-bold text-white">33</div><div className="text-sm text-purple-200 mt-1">条审核规则</div></div>
-                  <div className="text-center"><div className="text-4xl font-bold text-white">95%+</div><div className="text-sm text-purple-200 mt-1">抽取精度</div></div>
+                  <div className="text-center"><div className="text-4xl font-bold text-white">98%+</div><div className="text-sm text-purple-200 mt-1">抽取精度</div></div>
                 </div>
               </div>
             </motion.div>
@@ -112,7 +112,7 @@ export default function SupplyChainFinance() {
               <div className="bg-gradient-to-r from-pink-900/30 to-purple-900/30 rounded-xl p-6 border border-pink-500/20 text-center">
                 <span className="text-pink-400 text-sm font-medium">应用层</span>
                 <h3 className="text-lg font-bold text-white mt-1">DocPilot 智能体行业套件</h3>
-                <p className="text-gray-400 text-sm mt-1">供应链金融审核 · 合同审查 · 招投标审查 · 虚假贸易穿透 · 对公反电诈 · 保险核赔</p>
+                <p className="text-gray-400 text-sm mt-1">供应链金融审核 · 合同审查 · 招投标审查 · 虚假贸易穿透 · 保险核赔</p>
               </div>
               <div className="flex justify-center"><div className="w-px h-6 bg-purple-500/50" /></div>
               <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-xl p-6 border border-purple-500/20 text-center">
@@ -120,9 +120,9 @@ export default function SupplyChainFinance() {
                 <h3 className="text-lg font-bold text-white mt-1">TokenX Agentic AI 平台</h3>
                 <p className="text-gray-400 text-sm mt-1">多角色协同 · 复杂逻辑推理 (CoT) · 工具调用 · MCP / API / RPA 集成</p>
               </div>
-              <div className="flex justify-center"><div className="w-px h-6 bg-blue-500/50" /></div>
-              <div className="bg-gradient-to-r from-blue-900/30 to-cyan-900/30 rounded-xl p-6 border border-blue-500/20 text-center">
-                <span className="text-blue-400 text-sm font-medium">基础层</span>
+              <div className="flex justify-center"><div className="w-px h-6 bg-purple-500/50" /></div>
+              <div className="bg-gradient-to-r from-purple-900/30 to-purple-900/30 rounded-xl p-6 border border-purple-500/20 text-center">
+                <span className="text-purple-400 text-sm font-medium">基础层</span>
                 <h3 className="text-lg font-bold text-white mt-1">三大引擎</h3>
                 <p className="text-gray-400 text-sm mt-1">多模态文本智能（98%+ 精度）· 多模态知识引擎 · 数据智能 NL2SQL</p>
               </div>
@@ -212,7 +212,7 @@ export default function SupplyChainFinance() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-purple-900/40 to-blue-900/40">
+        <section className="py-20 bg-gradient-to-r from-purple-900/40 to-purple-900/40">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">让我们为您演示</h2>
             <p className="text-gray-300 mb-8">20 分钟了解 TokenAI 如何将您的信审效率提升 10 倍。</p>

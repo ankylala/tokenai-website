@@ -73,7 +73,7 @@ export default function About() {
                     核心产品与客户
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    核心产品包括 <span className="text-white font-medium">DocPilot 智能体行业套件</span>、<span className="text-white font-medium">TokenX Agentic AI 平台</span>和<span className="text-white font-medium">数据智能引擎</span>。
+                    核心产品包括 <span className="text-white font-medium">DocPilot 智能体行业套件</span>、<span className="text-white font-medium">TokenX Agentic AI 平台</span>、<span className="text-white font-medium">多模态大模型文本智能</span>、<span className="text-white font-medium">多模态知识引擎</span>和<span className="text-white font-medium">数据智能引擎</span>。
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {['中国铁塔', '省级农商银行', '国家电网', '上海高院'].map((c, i) => (

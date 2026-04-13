@@ -75,7 +75,7 @@ export default function ContractReview() {
               {[
                 { value: '78%', label: '审批效率提升' },
                 { value: '86%', label: '风险漏检降低' },
-                { value: '95%+', label: '风险识别准确率' },
+                { value: '98%+', label: '风险识别准确率' },
                 { value: '-3h', label: '法务日均减负' },
               ].map((kpi, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="bg-purple-500/10 rounded-xl p-6 text-center border border-purple-500/20">

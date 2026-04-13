@@ -7,20 +7,16 @@ import { twMerge } from 'tailwind-merge';
 const productLinks = [
   { label: 'DocPilot (驭文)', href: '/products#docpilot' },
   { label: 'TokenX Agentic AI 平台', href: '/products#tokenx' },
-  { label: '多模态文本智能引擎', href: '/text-intelligence' },
+  { label: '多模态大模型文本智能', href: '/text-intelligence' },
   { label: '多模态知识引擎', href: '/products#knowledge-engine' },
-  { label: '数据智能（NL2SQL）引擎', href: '/nl2sql' },
+  { label: '数据智能（NL2SQL）', href: '/nl2sql' },
 ];
 
 const solutionLinks = [
   { label: '供应链金融放贷审核', href: '/supply-chain-finance' },
   { label: '采购合规与虚假贸易穿透式审核', href: '/fake-trade' },
-  { label: '对公客户涉诈风险识别与防控', href: '/solutions#anti-fraud' },
-  { label: '跨境贸易结算单据合规审核', href: '/solutions#trade-settlement' },
   { label: '合同条款审查与风险识别', href: '/contract-review' },
-  { label: '招投标合规审查', href: '/solutions#bidding' },
-  { label: '保险智能核赔', href: '/solutions#insurance' },
-  { label: '企业数据查询', href: '/nl2sql' },
+  { label: '企业数据智能查询', href: '/nl2sql' },
 ];
 
 const navItems = [

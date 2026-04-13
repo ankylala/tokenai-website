@@ -31,13 +31,6 @@ const solutions = [
     link: '/fake-trade',
   },
   {
-    id: 'anti-fraud',
-    icon: UserCheck,
-    title: '对公客户涉诈风险识别与防控',
-    desc: '银行在对公客户开户环节需要识别涉诈风险，但人工尽调耗时 2+ 小时，风险维度覆盖不全，各网点审查标准不一致。',
-    kpis: ['7大维度', '40+风险点', '<15分钟'],
-  },
-  {
     id: 'trade-settlement',
     icon: Globe,
     title: '跨境贸易结算单据合规审核',
@@ -50,7 +43,7 @@ const solutions = [
     title: '合同审核 Agent',
     subtitle: 'AI 驱动的智能合同审查',
     desc: '单份复杂合同需 3-5 天审查、跨条款风险漏检率超 40%。合同审核 Agent 通过 Agentic Workflow 自动拆解审查任务——每条结论可溯源到原文。',
-    kpis: ['78%效率提升', '86%漏检降低', '95%+准确率'],
+    kpis: ['78%效率提升', '86%漏检降低', '98%+准确率'],
     link: '/contract-review',
   },
   {
@@ -65,14 +58,14 @@ const solutions = [
     icon: Shield,
     title: '保险理赔智能审核',
     desc: '理赔员需要综合分析车损照片、事故责任书、医疗收据和保险条款，判断赔付金额。多模态材料交叉验证工作量大。',
-    kpis: ['多模态分析', '条款匹配', '理算建议'],
+kpis: ['多模态分析', '条款匹配', '理算建议'],
   },
   {
-    id: 'data-query',
+    id: 'nl2sql',
     icon: Database,
-    title: '用自然语言查询业务数据',
-    desc: '业务人员想了解经营数据，但不会写 SQL，每次都要找数据分析师排队。',
-    kpis: ['自然语言', '300+数据库', '即时返回'],
+    title: '数据智能查询',
+    desc: '打破底层数据壁垒，支持业务人员通过自然语言跨越多类型异构数据库进行自助查询。',
+    kpis: ['自然语言', '300+数据库', '98%+准确率'],
     link: '/nl2sql',
   },
 ];
@@ -98,8 +91,8 @@ export default function Solutions() {
                 可信、可追溯、可审计。
               </p>
 
-              <p className="text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed">
-                TokenAI 为金融、司法、贸易、保险等高要求行业打造可信赖的 AI 专家。AI 专家做判断，人做终审——每个结论可追溯、可审计、可复核，天然满足合规审计要求。
+              <p className="text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed text-center">
+                TokenAI 为金融、司法、贸易、保险等高要求行业打造可信赖的 AI 专家<br/>AI 专家做判断，人做终审——每个结论可追溯、可审计、可复核，天然满足合规审计要求
               </p>
 
               {/* Stats */}
@@ -109,7 +102,7 @@ export default function Solutions() {
                   <div className="text-sm text-gray-400">行业解决方案</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400 mb-1">95%+</div>
+                  <div className="text-3xl font-bold text-purple-400 mb-1">98%+</div>
                   <div className="text-sm text-gray-400">研判准确率</div>
                 </div>
                 <div className="text-center">
