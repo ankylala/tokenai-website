@@ -49,6 +49,12 @@ const contactInfo = [
     subContent: '',
   },
   {
+    icon: Phone,
+    title: '联系人',
+    content: '林先生',
+    subContent: '13795366587',
+  },
+  {
     icon: Mail,
     title: '商务邮箱',
     content: 'linliang@token-ai.com.cn',
