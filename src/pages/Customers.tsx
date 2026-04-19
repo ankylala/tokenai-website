@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, TrendingUp, Shield, Database, FileText, Brain 
 
 const cases = [
   {
-    id: 2,
+    id: 1,
     client: '上海高级人民法院',
     industry: '司法',
     icon: Shield,
@@ -18,7 +18,7 @@ const cases = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     client: '中国铁塔',
     industry: '通信',
     icon: Database,
@@ -31,7 +31,7 @@ const cases = [
     ],
   },
   {
-    id: 4,
+    id: 3,
     client: '某头部会计师事务所',
     industry: '专业服务',
     icon: FileText,
@@ -44,7 +44,7 @@ const cases = [
     ],
   },
   {
-    id: 5,
+    id: 4,
     client: '国家电网（山西/浙江）',
     industry: '能源',
     icon: Brain,
