@@ -5,20 +5,6 @@ import { ArrowRight, CheckCircle, TrendingUp, Shield, Database, FileText, Brain 
 
 const cases = [
   {
-    id: 1,
-    client: '某省级农商银行',
-    industry: '金融',
-    icon: TrendingUp,
-    scene: '集中作业版式分类 + 信贷文档智能抽取',
-    challenge: '信贷文档种类繁多（30+ 类），人工分类和抽取耗时长、易出错，无法满足集中作业要求。',
-    solution: '部署 TokenAI 文本智能引擎，自动完成文档分类和关键字段抽取，全程运行于信创环境。',
-    results: [
-      '分类时长缩减 80%',
-      '30+ 类文档抽取精度 98%+',
-      '全面运行于华为昇腾 NPU、阿里 PPU 和海光 DCU 信创环境',
-    ],
-  },
-  {
     id: 2,
     client: '上海高级人民法院',
     industry: '司法',

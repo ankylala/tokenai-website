@@ -130,7 +130,6 @@ export default function Terms() {
                 <p>如您对本服务条款有任何疑问，请联系我们：</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>邮箱：linliang@token-ai.com.cn</li>
-                  <li>电话：13795366587</li>
                   <li>地址：北京市海淀区成府路45号中关村智造大街C座105B</li>
                 </ul>
               </section>

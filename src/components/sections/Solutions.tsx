@@ -1,56 +1,89 @@
 import { motion } from 'framer-motion';
-import { Building2, ShieldCheck, Globe, Scale, FileSearch, Heart, Database } from 'lucide-react';
+import { Building2, ShieldCheck, Globe, Scale, FileSearch, Heart, Database, ArrowRight } from 'lucide-react';
 
 const solutions = [
   {
     id: 'supply-chain-finance',
     icon: Building2,
     title: '供应链金融放贷审核',
-    description: '银行信审员每天审核保理融资申请，需要逐份比对合同、发票、订单和物流单，确认贸易背景真实性。',
-    advantages: ['6类材料3秒自动分类', '33条规则跨文档交叉比对', '10分钟完成终审'],
+    pain: '信审员逐笔比对发票、订单、物流单，确认贸易背景真实性——重复、耗时、易漏。',
+    values: [
+      '6 类材料秒级自动分类',
+      '33 条规则跨文档交叉比对',
+      '审核结论精确溯源到原文',
+    ],
+    result: '单笔审核：1-2 小时 → 10 分钟',
     gradient: 'from-purple-600 to-blue-500',
+    link: '/supply-chain-finance',
   },
   {
     id: 'fake-trade',
     icon: ShieldCheck,
     title: '虚假贸易穿透审核',
-    description: '大型企业每年涉及数万笔采购，采购链条长、参与方多，是虚假贸易和采购违规的高发领域。',
-    advantages: ['"五查"框架穿透式审核', '覆盖八大欺诈模式', '自动生成审计底稿'],
+    pain: '采购链条长、参与方多，传统抽样审计难以覆盖全量，虚假贸易风险隐蔽。',
+    values: [
+      '"五查"框架穿透式审核',
+      '大数据协查模式',
+      '自动生成审计底稿',
+    ],
+    result: '从抽样审计 → 全量穿透覆盖',
     gradient: 'from-pink-600 to-purple-500',
+    link: '/fake-trade',
   },
   {
     id: 'trade-settlement',
     icon: Globe,
     title: '国际贸易结算',
-    description: '信用证结算涉及发票、装箱单、提单等多语言单据，银行单证员需要逐项核对条款是否一致。',
-    advantages: ['多语言混合单据解析', 'UCP600规则自动匹配', '审核结论精确溯源'],
+    pain: '信用证涉及多语言、多单据逐项核对，人工审证效率低、不符点易遗漏。',
+    values: [
+      '多语言混合半结构解析',
+      'UCP600 规则自动匹配',
+      '不符点自动识别并溯源',
+    ],
+    result: '多语言单据，分钟级完成审证',
     gradient: 'from-blue-600 to-purple-500',
   },
   {
     id: 'contract-review',
     icon: Scale,
     title: '智能合同审查',
-    description: '企业法务每天审阅大量非标合同，需要逐条对照法规、内部制度和商业条款，识别风险点。',
-    advantages: ['50+条审查规则', '条款一致性比对', '结论精确溯源到原文'],
+    pain: '法务逐条对照法规、内部制度与商业条款，非标合同越多，风险越难穷尽。',
+    values: [
+      '50+ 条审查规则自动执行',
+      '条款一致性交叉比对',
+      '风险结论精确溯源到原文',
+    ],
+    result: '千页合同，风险点无遗漏',
     gradient: 'from-indigo-600 to-purple-500',
+    link: '/contract-review',
   },
   {
     id: 'bidding',
     icon: FileSearch,
     title: '招投标合规审查',
-    description: '大篇幅标书的资质核查与防串标分析，投标文件多维度合规校验，法律法规智能匹配。',
-    advantages: ['多维度资质合规校验', '法律法规智能匹配', '审查报告精确溯源'],
+    pain: '千页标书的资质核查与防串标分析，人工逐项校验耗时且标准难统一。',
+    values: [
+      '多维度资质合规校验',
+      '法律法规智能匹配',
+      '审查报告精确溯源',
+    ],
+    result: '千页标书，分钟级处理',
     gradient: 'from-purple-600 to-indigo-500',
   },
   {
     id: 'insurance',
     icon: Heart,
     title: '保险智能核赔',
-    description: '车损、医疗等多模态理赔审核，照片、收据、条款等多源数据综合分析。',
-    advantages: ['多模态数据综合分析', '条款自动匹配', '理赔理算建议自动生成'],
+    pain: '车险、医疗险理赔涉及病历、票据、照片等多源异构材料，人工核赔耗时长。',
+    values: [
+      '多模态数据综合分析',
+      '条款自动匹配',
+      '理赔理算建议自动生成',
+    ],
+    result: '多源材料一次研判，理算建议自动输出',
     gradient: 'from-orange-600 to-red-500',
   },
-  ];
+];
 
 const Solutions = () => {
   return (
@@ -87,32 +120,47 @@ const Solutions = () => {
                 className="group relative"
               >
                 {/* Card */}
-                <div className="relative h-full bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300">
+                <div className="relative h-full bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 flex flex-col">
                   {/* Glow Effect */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Content */}
-                  <div className="relative z-10">
-                    {/* Icon */}
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${solution.gradient} mb-4`}>
-                      <Icon className="w-6 h-6 text-white" />
+                  <div className="relative z-10 flex flex-col flex-1">
+                    {/* Icon + Title */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-r ${solution.gradient}`}>
+                        <Icon className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white">{solution.title}</h3>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-white mb-2">{solution.title}</h3>
-                    
-                    {/* Description */}
-                    <p className="text-gray-400 text-sm mb-4">{solution.description}</p>
+                    {/* Pain Point */}
+                    <p className="text-gray-400 text-sm mb-4">{solution.pain}</p>
 
-                    {/* Advantages */}
-                    <ul className="space-y-1">
-                      {solution.advantages.map((adv, idx) => (
+                    {/* Values */}
+                    <ul className="space-y-2 mb-4 flex-1">
+                      {solution.values.map((val, idx) => (
                         <li key={idx} className="flex items-start text-sm text-gray-300">
-                          <span className="text-purple-400 mr-2">•</span>
-                          {adv}
+                          <span className="text-purple-400 mr-2 mt-0.5">✓</span>
+                          {val}
                         </li>
                       ))}
                     </ul>
+
+                    {/* Result */}
+                    <div className="mt-auto pt-4 border-t border-white/10">
+                      <p className="text-primary font-bold text-sm">{solution.result}</p>
+                    </div>
+
+                    {/* Link */}
+                    {solution.link && (
+                      <button 
+                        onClick={() => window.location.href = solution.link}
+                        className="mt-3 flex items-center text-purple-400 text-sm font-medium hover:text-purple-300 transition-colors"
+                      >
+                        了解详情 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>

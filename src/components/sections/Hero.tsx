@@ -162,9 +162,19 @@ export function Hero() {
             让 AI 的专业判断，<br className="hidden md:block" />值得被信赖
           </h1>
 
-          {/* Subtitle */}
+          {/* Subtitle - Line 1: Positioning */}
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed text-center">
-            TokenAI 为高要求行业打造可信赖的 AI 专家<br/>AI 专家做判断，人做终审——每个结论可追溯、可审计、可复核
+            TokenAI 为高要求行业打造可信赖的 AI 专家
+          </p>
+
+          {/* Subtitle - Line 2: Scenario + Value */}
+          <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed text-center">
+            法务合同审查、保险核赔、银行放贷审核、采购穿透式监管——过去完全依赖高薪专家，一笔业务动辄数小时甚至数天。上一代 AI 仅解决了"提取"，TokenAI 解决更高价值的"研判"。
+          </p>
+
+          {/* Subtitle - Line 3: Trust anchor */}
+          <p className="text-lg text-purple-400 max-w-4xl mx-auto leading-relaxed text-center font-medium">
+            AI 专家做判断，人做终审——每个结论可追溯、可审计、可复核
           </p>
 
           {/* CTA Buttons */}

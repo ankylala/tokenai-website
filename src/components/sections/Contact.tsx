@@ -148,11 +148,11 @@ const Contact = () => {
 
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-purple-400" />
+                    <Mail className="w-5 h-5 text-purple-400" />
                   </div>
                   <div>
-                    <p className="text-gray-300">13795366587</p>
-                    <p className="text-sm text-gray-500">联系人：林亮</p>
+                    <p className="text-gray-300">linliang@token-ai.com.cn</p>
+                    <p className="text-sm text-gray-500">7x24 小时接收邮件</p>
                   </div>
                 </div>
               </div>

@@ -5,7 +5,7 @@ const timeline = [
   {
     date: '2024年10月',
     title: '公司成立',
-    description: '北京词元汇智科技有限公司正式成立，致力于专业智能体研发',
+    description: '北京词元汇智科技有限公司成立，致力于为高要求行业打造可信赖的 AI 专家。',
     icon: Rocket,
     color: 'purple',
   },
@@ -69,7 +69,7 @@ const Timeline = () => {
             发展历程
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            从成立到成长，每一步都在推动专业智能体的创新与发展
+            从成立到成长，每一步都在让 AI 的专业判断更值得被信赖
           </p>
         </motion.div>
 

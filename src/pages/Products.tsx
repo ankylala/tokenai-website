@@ -269,16 +269,6 @@ function DocPilotDetail({ onBack }: { onBack: () => void }) {
       </div>
 
       <div className="mb-16">
-        <h3 className="text-2xl font-bold text-white text-center mb-8">Doc-DOS 四层架构</h3>
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-white/10 space-y-3">
-          <div className="flex items-center gap-4"><span className="px-3 py-1 bg-purple-600 text-white text-sm font-bold rounded">L4 意图层</span><span className="text-gray-300">用户<b className="text-white">自然语言指令</b> + 场景输出协议 → 无学习成本</span></div>
-          <div className="flex items-center gap-4"><span className="px-3 py-1 bg-purple-500 text-white text-sm font-bold rounded">L3 控制层</span><span className="text-gray-300"><b className="text-white">Agent 自主编排</b>工具链 · System Prompt 驱动 · 多轮推理决策</span></div>
-          <div className="flex items-center gap-4"><span className="px-3 py-1 bg-purple-400 text-white text-sm font-bold rounded">L2 驱动层</span><span className="text-gray-300"><b className="text-white">原子工具集</b>：search / read / extract_table / run_code / generate</span></div>
-          <div className="flex items-center gap-4"><span className="px-3 py-1 bg-purple-300 text-slate-900 text-sm font-bold rounded">L1 物理层</span><span className="text-gray-300"><b className="text-white">文件 I/O</b>：PDF 解析 / Word / Excel / 版面分析 / OCR 识别</span></div>
-        </div>
-      </div>
-
-      <div className="mb-16">
         <h3 className="text-2xl font-bold text-white text-center mb-8">12 类统一任务</h3>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
           {docpilotTasks.map((task, i) => (

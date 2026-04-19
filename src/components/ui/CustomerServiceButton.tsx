@@ -1,20 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, MessageCircle, X, ExternalLink } from 'lucide-react';
+import { Mail, MessageCircle, X, ExternalLink } from 'lucide-react';
 
 export function CustomerServiceButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   const contactOptions = [
-    {
-      icon: Phone,
-      label: '电话咨询',
-      action: () => {
-        window.location.href = 'tel:13795366587';
-        setIsOpen(false);
-      },
-      color: 'from-blue-600 to-blue-500',
-    },
     {
       icon: Mail,
       label: '发送邮件',

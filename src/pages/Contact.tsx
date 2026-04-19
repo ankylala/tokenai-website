@@ -54,12 +54,6 @@ const contactInfo = [
     content: 'linliang@token-ai.com.cn',
     subContent: '7x24小时接收邮件',
   },
-  {
-    icon: Phone,
-    title: '联系电话',
-    content: '13795366587',
-    subContent: '联系人：林亮',
-  },
 ];
 
 export default function Contact() {
@@ -265,13 +259,6 @@ export default function Contact() {
                       如果您有紧急需求，可以直接拨打我们的服务热线或发送邮件
                     </p>
                     <div className="space-y-3">
-                      <a
-                        href="tel:13795366587"
-                        className="flex items-center gap-3 text-purple-400 hover:text-purple-300 transition-colors"
-                      >
-                        <Phone className="w-5 h-5" />
-                        <span>13795366587（联系人：林亮）</span>
-                      </a>
                       <a
                         href="mailto:linliang@token-ai.com.cn"
                         className="flex items-center gap-3 text-purple-400 hover:text-purple-300 transition-colors"
