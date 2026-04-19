@@ -245,7 +245,7 @@ function DocPilotDetail({ onBack }: { onBack: () => void }) {
               {/* Screenshot */}
               <div className="relative bg-slate-950 p-1">
                 <img 
-                  src="/images/products/DocPilot 页面.png" 
+                  src="/images/products/DocPilot.png" 
                   alt="DocPilot 系统界面" 
                   className="w-full h-auto object-contain rounded-lg"
                 />
@@ -399,7 +399,7 @@ function TokenXDetail({ onBack }: { onBack: () => void }) {
               </div>
               <div className="relative bg-slate-950 p-1">
                 <img 
-                  src="/images/products/Tokenx.png" 
+                  src="/images/products/TokenX_修复版.png" 
                   alt="TokenX 系统界面" 
                   className="w-full h-auto object-contain rounded-lg"
                 />

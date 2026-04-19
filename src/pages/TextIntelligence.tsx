@@ -145,7 +145,7 @@ export default function TextIntelligence() {
                 {/* Screenshot */}
                 <div className="relative bg-slate-950 p-1">
                   <img 
-                    src="/images/products/多模态文本解析-1.png" 
+                    src="/images/products/多模态大模型文本智能_修复版.png" 
                     alt="多模态文本解析系统界面" 
                     className="w-full h-auto object-contain rounded-lg"
                   />

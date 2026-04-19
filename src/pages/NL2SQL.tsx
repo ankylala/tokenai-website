@@ -128,16 +128,12 @@ export default function NL2SQL() {
                   </div>
                   <div className="w-10" />
                 </div>
-                <div className="relative bg-slate-950 p-1 min-h-[400px] flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Database className="w-16 h-16 text-purple-500 mx-auto mb-4" />
-                    <h4 className="text-white font-bold mb-2">NL2SQL 智能数据查询</h4>
-                    <p className="text-gray-500 text-sm">用自然语言查询企业数据</p>
-                    <div className="mt-6 bg-slate-900 rounded-lg p-4 max-w-md mx-auto">
-                      <p className="text-purple-300 text-sm font-mono text-left">Q: 2025年Q1销售额最高的产品</p>
-                      <p className="text-purple-300 text-sm font-mono text-left mt-2">→ SELECT product, SUM(sales) FROM...</p>
-                    </div>
-                  </div>
+                <div className="relative bg-slate-950 p-1">
+                  <img 
+                    src="/images/products/NL2SQL.png" 
+                    alt="NL2SQL 系统界面" 
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
                 </div>
               </div>
             </motion.div>
