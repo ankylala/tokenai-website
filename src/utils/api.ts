@@ -17,7 +17,7 @@ export interface ContactFormData {
  * @returns 提交结果
  */
 export async function submitContactForm(data: ContactFormData): Promise<{ success: boolean; message: string }> {
-  const API_ENDPOINT = 'http://localhost:3001/api/contact';
+  const API_ENDPOINT = '/api/contact';
   
   try {
     const response = await fetch(API_ENDPOINT, {
@@ -56,8 +56,5 @@ export function initCustomerService() {
 }
 
 export function openCustomerService() {
-  // 示例：打开Intercom聊天窗口
-  // window.Intercom('show');
-  
-  alert('在线客服功能即将上线，请拨打服务热线：400-XXX-XXXX');
+  window.location.href = '/contact#apply';
 }

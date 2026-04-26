@@ -118,24 +118,31 @@ export default function Contact() {
 
     setIsSubmitting(true);
 
-    // 模拟提交
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message);
 
-    setIsSubmitting(false);
-    setSubmitStatus('success');
-
-    // 重置表单
-    setFormData({
-      name: '',
-      company: '',
-      phone: '',
-      email: '',
-      industry: '',
-      message: '',
-    });
-
-    // 3秒后重置状态
-    setTimeout(() => setSubmitStatus('idle'), 3000);
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        company: '',
+        phone: '',
+        email: '',
+        industry: '',
+        message: '',
+      });
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+    } catch {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
