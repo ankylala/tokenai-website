@@ -430,6 +430,47 @@ function EngineDetail({ engine, onBack }: { engine: typeof engines[0]; onBack: (
         <p className="text-gray-400 max-w-3xl mx-auto">{engine.desc}</p>
       </div>
 
+      {engine.id === 'knowledge-engine' && (
+        <section className="py-12 mb-16 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none" />
+          <div className="relative z-10 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative group"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000" />
+              <div className="relative rounded-xl overflow-hidden border border-white/10 bg-slate-800 shadow-2xl">
+                <div className="flex items-center justify-between px-4 py-3 bg-slate-900/80 backdrop-blur border-b border-white/5">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-500/90 shadow-sm" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/90 shadow-sm" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/90 shadow-sm" />
+                    </div>
+                  </div>
+                  <div className="flex-1 mx-8">
+                    <div className="bg-slate-800/50 rounded-md px-3 py-1 text-center border border-white/5">
+                      <span className="text-xs text-gray-400 font-mono">多模态知识引擎 — 企业知识管理平台</span>
+                    </div>
+                  </div>
+                  <div className="w-10" />
+                </div>
+                <div className="relative bg-slate-950 p-1">
+                  <img
+                    src="/images/products/多模态知识引擎.png"
+                    alt="多模态知识引擎系统界面"
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-4">
           {engine.features.map((f, i) => (
