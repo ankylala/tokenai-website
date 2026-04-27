@@ -52,7 +52,7 @@ const contactInfo = [
     icon: Phone,
     title: '联系人',
     content: '林先生',
-    subContent: '13795366587',
+    subContent: '18612648656',
   },
   {
     icon: Mail,
