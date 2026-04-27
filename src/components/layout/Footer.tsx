@@ -105,6 +105,9 @@ export function Footer() {
               © {currentYear} {COMPANY_INFO.fullName}. All rights reserved.
             </p>
             <div className="flex space-x-6">
+              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary transition-colors text-sm">
+                京ICP备2026019842号-1
+              </a>
             </div>
           </div>
         </div>
