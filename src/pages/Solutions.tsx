@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Navbar, Footer } from '../components/layout';
 import { Button } from '../components/ui';
 import {
@@ -71,6 +72,7 @@ kpis: ['多模态分析', '条款匹配', '理算建议'],
 ];
 
 export default function Solutions() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-slate-900">
       <Navbar />
@@ -130,7 +132,7 @@ export default function Solutions() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="bg-slate-800/50 rounded-xl p-6 border border-white/10 hover:border-purple-500/30 transition-all cursor-pointer group"
-                  onClick={() => sol.link ? window.location.href = sol.link : document.getElementById(sol.id)?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => sol.link ? navigate(sol.link) : document.getElementById(sol.id)?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
                     <sol.icon className="w-6 h-6 text-purple-400" />

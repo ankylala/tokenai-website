@@ -47,6 +47,11 @@ export function Footer() {
                   联系我们
                 </a>
               </li>
+              <li>
+                <a href="/stats" className="text-text-muted hover:text-primary transition-colors text-sm">
+                  数据统计
+                </a>
+              </li>
             </ul>
           </div>
 

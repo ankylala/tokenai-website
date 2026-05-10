@@ -12,7 +12,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:cursor-not-allowed';
     
     const variants = {
-      primary: 'bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white shadow-glow hover:shadow-glow-hover',
+      primary: 'bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white shadow-glow shadow-glow-hover',
       secondary: 'bg-background-lighter hover:bg-background-light text-text-primary border border-primary/30 hover:border-primary',
       outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
       ghost: 'text-text-secondary hover:text-primary hover:bg-primary/10',

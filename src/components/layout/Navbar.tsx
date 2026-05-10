@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '../ui';
 import { twMerge } from 'tailwind-merge';
@@ -31,18 +31,18 @@ const navItems = [
 function DropdownMenu({ items, isOpen }: { items: { label: string; href: string }[]; isOpen: boolean }) {
   if (!isOpen) return null;
   return (
-    <div 
+    <div
       className="absolute top-full left-0 mt-2 w-48 bg-slate-800 rounded-lg shadow-xl border border-white/10 py-2 z-50"
       onMouseEnter={(e) => e.stopPropagation()}
     >
       {items.map((item) => (
-        <a
+        <Link
           key={item.href}
-          href={item.href}
+          to={item.href}
           className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-purple-500/20 transition-colors"
         >
           {item.label}
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -54,6 +54,7 @@ export function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -99,12 +100,14 @@ export function Navbar() {
               <div key={item.href} className="relative">
                 {item.dropdown ? (
                   <div
-                    className="flex items-center gap-1 cursor-pointer text-gray-300 hover:text-white transition-colors font-medium text-sm py-2"
+                    className="flex items-center gap-1 cursor-pointer"
                     onMouseEnter={() => handleMouseEnter(item.label)}
                     onMouseLeave={() => handleMouseLeave(item.label)}
                   >
-                    <a href={item.href} className="hover:text-white">{item.label}</a>
-                    <ChevronDown className="w-4 h-4" />
+                    <div className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors font-medium text-sm py-2">
+                      <Link to={item.href}>{item.label}</Link>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
                     <DropdownMenu items={item.dropdown} isOpen={activeDropdown === item.label} />
                   </div>
                 ) : (
@@ -120,7 +123,7 @@ export function Navbar() {
                 )}
               </div>
             ))}
-            <Button variant="primary" size="sm" onClick={() => window.location.href = '/contact#apply'}>预约演示</Button>
+            <Button variant="primary" size="sm" onClick={() => navigate('/contact#apply')}>预约演示</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -140,10 +143,10 @@ export function Navbar() {
               <div key={item.href}>
                 {item.dropdown ? (
                   <div>
-                    <a href={item.href} className="block text-gray-300 hover:text-white py-2 font-medium">{item.label}</a>
+                    <Link to={item.href} className="block text-gray-300 hover:text-white py-2 font-medium">{item.label}</Link>
                     <div className="pl-4 space-y-1">
                       {item.dropdown.map((sub) => (
-                        <a key={sub.href} href={sub.href} className="block text-gray-400 hover:text-white py-1 text-sm">{sub.label}</a>
+                        <Link key={sub.href} to={sub.href} className="block text-gray-400 hover:text-white py-1 text-sm">{sub.label}</Link>
                       ))}
                     </div>
                   </div>
@@ -155,7 +158,7 @@ export function Navbar() {
               </div>
             ))}
             <div className="pt-3">
-              <Button variant="primary" size="sm" className="w-full" onClick={() => window.location.href = '/contact#apply'}>预约演示</Button>
+              <Button variant="primary" size="sm" className="w-full" onClick={() => navigate('/contact#apply')}>预约演示</Button>
             </div>
           </div>
         </div>

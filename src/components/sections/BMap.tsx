@@ -16,7 +16,7 @@ export function BMap({ longitude = 116.312, latitude = 39.992 }: BMapProps) {
 
   if (showMap) {
     return (
-      <div className="w-full h-full rounded-lg">
+      <div className="w-full h-full rounded-lg relative">
         <iframe
           src={mapUrl}
           width="100%"

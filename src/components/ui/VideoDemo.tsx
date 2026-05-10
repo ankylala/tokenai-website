@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX, Maximize, X } from 'lucide-react';
 
@@ -22,8 +22,20 @@ export function VideoDemo({
   const [showOverlay, setShowOverlay] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [isHoveringControls, setIsHoveringControls] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // 监听浏览器原生全屏事件，同步 isFullscreen 状态
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -55,9 +67,9 @@ export function VideoDemo({
 
   const handleTimeUpdate = () => {
     if (!videoRef.current) return;
-    const current = videoRef.current.currentTime;
-    const duration = videoRef.current.duration;
-    setProgress((current / duration) * 100);
+    setCurrentTime(videoRef.current.currentTime);
+    setDuration(videoRef.current.duration || 0);
+    setProgress(videoRef.current.duration ? (videoRef.current.currentTime / videoRef.current.duration) * 100 : 0);
   };
 
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -128,12 +140,10 @@ export function VideoDemo({
 
         {/* Controls Bar */}
         <div
-          className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 hover:opacity-100 transition-opacity duration-300"
-          style={{ opacity: isPlaying || showOverlay ? undefined : 0 }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-          onMouseLeave={(e) => {
-            if (isPlaying) e.currentTarget.style.opacity = '0';
-          }}
+          className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity duration-300"
+          style={{ opacity: showOverlay ? 0 : isHoveringControls ? 1 : 0 }}
+          onMouseEnter={() => setIsHoveringControls(true)}
+          onMouseLeave={() => setIsHoveringControls(false)}
         >
           {/* Progress Bar */}
           <div
@@ -162,11 +172,9 @@ export function VideoDemo({
               >
                 {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
               </button>
-              {videoRef.current && (
-                <span className="text-white/70 text-sm">
-                  {formatTime(videoRef.current.currentTime)} / {formatTime(videoRef.current.duration)}
-                </span>
-              )}
+              <span className="text-white/70 text-sm">
+                {formatTime(currentTime)} / {formatTime(duration)}
+              </span>
             </div>
             <div className="flex items-center gap-3">
               <button

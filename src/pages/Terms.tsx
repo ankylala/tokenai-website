@@ -112,7 +112,7 @@ export default function Terms() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li>本条款适用中华人民共和国法律。</li>
                   <li>因本条款产生的争议，双方应协商解决。</li>
-                  <li>协商不成的，任一方可向甲方所在地人民法院提起诉讼。</li>
+                  <li>协商不成的，任一方可向TokenAI所在地人民法院提起诉讼。</li>
                 </ul>
               </section>
 

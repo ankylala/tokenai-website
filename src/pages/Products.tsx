@@ -557,8 +557,20 @@ export default function Products() {
                 <motion.div key="grid" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {products.map((p, i) => (
                     <motion.div key={p.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="bg-slate-800/50 rounded-xl p-6 border border-white/10 hover:border-purple-500/30 transition-all cursor-pointer group" onClick={() => p.id === 'data-intelligence' ? navigate('/nl2sql') : setActiveProduct(p.id)}>
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-${p.color}-500/20 transition-colors bg-${p.color}-500/10`}>
-                        <p.icon className={`w-6 h-6 text-${p.color}-400`} />
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-colors ${
+                        p.color === 'purple' ? 'bg-purple-500/10 group-hover:bg-purple-500/20' :
+                        p.color === 'blue' ? 'bg-blue-500/10 group-hover:bg-blue-500/20' :
+                        p.color === 'cyan' ? 'bg-cyan-500/10 group-hover:bg-cyan-500/20' :
+                        p.color === 'indigo' ? 'bg-indigo-500/10 group-hover:bg-indigo-500/20' :
+                        'bg-emerald-500/10 group-hover:bg-emerald-500/20'
+                      }`}>
+                        <p.icon className={`w-6 h-6 ${
+                          p.color === 'purple' ? 'text-purple-400' :
+                          p.color === 'blue' ? 'text-blue-400' :
+                          p.color === 'cyan' ? 'text-cyan-400' :
+                          p.color === 'indigo' ? 'text-indigo-400' :
+                          'text-emerald-400'
+                        }`} />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-2">{p.title}</h3>
                       <p className="text-purple-400 text-sm mb-3">{p.subtitle}</p>

@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
       '多模型支持（Qwen、GLM、DeepSeek等）',
     ],
     icon: 'Cpu',
-    link: '/products/tokenx',
+    link: '/products#tokenx',
   },
   {
     id: 'docpilot',
@@ -52,7 +52,7 @@ export const PRODUCTS: Product[] = [
       '人机协同、场景泛化',
     ],
     icon: 'FileText',
-    link: '/products/docpilot',
+    link: '/products#docpilot',
   },
   {
     id: 'text-intelligence',
@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
       '多模态数据洞察',
     ],
     icon: 'Eye',
-    link: '/products/text-intelligence',
+    link: '/text-intelligence',
   },
   {
     id: 'data-intelligence',
@@ -80,7 +80,7 @@ export const PRODUCTS: Product[] = [
       '业务洞察发现',
     ],
     icon: 'BarChart3',
-    link: '/products/data-intelligence',
+    link: '/nl2sql',
   },
   {
     id: 'knowledge-engine',
@@ -94,7 +94,7 @@ export const PRODUCTS: Product[] = [
       '知识持续更新',
     ],
     icon: 'Brain',
-    link: '/products/knowledge-engine',
+    link: '/products#knowledge-engine',
   },
 ];
 
